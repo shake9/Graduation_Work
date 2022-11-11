@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class boneTest : MonoBehaviour
 {
+
+    Animator animator;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,18 +57,22 @@ public class boneTest : MonoBehaviour
         if (Guu)
         {
             Debug.Log("グー");
+            animator.SetBool("Fire", false);
         }
         else if (Choki)
         {
             Debug.Log("チョキ");
+            animator.SetBool("Fire", true);
         }
         else if (Paa)
         {
             Debug.Log("パー");
+            animator.SetBool("Fire", true);
         }
         else
         {
             Debug.Log("読み込めん");
+            animator.SetBool("Fire", true);
         }
     }
 }

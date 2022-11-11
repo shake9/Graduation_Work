@@ -502,6 +502,8 @@
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiSceneMenu.cs"
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiVectorInspector.cs"
 "Assets/Oculus/Voice/Lib/Wit.ai/AssemblyInfo.cs"
+"Assets/Scenes/boneTest.cs"
+"Assets/Scenes/handRay.cs"
 -langversion:8.0
 
 /deterministic
