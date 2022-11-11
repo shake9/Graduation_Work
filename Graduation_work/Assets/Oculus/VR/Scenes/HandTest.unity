@@ -474,7 +474,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654211503}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 99298b86cc409f040afc66c29c433e7d, type: 2}
   m_CullingMode: 0
@@ -1068,11 +1068,6 @@ Transform:
   m_Father: {fileID: 1594308570}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1532447828 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9195541944891331139, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-  m_PrefabInstance: {fileID: 9195541944198274583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568687148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1156,6 @@ Transform:
   - {fileID: 1191662068}
   - {fileID: 1623181386}
   - {fileID: 747178299}
-  - {fileID: 1532447828}
   m_Father: {fileID: 863221866}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1466,6 +1460,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1672560758
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672560748}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99298b86cc409f040afc66c29c433e7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1795229447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,11 +1837,39 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1594308569}
+    m_TransformParent: {fileID: 1191662068}
     m_Modifications:
+    - target: {fileID: 1081671050853795177, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081671050853795177, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267012600194055871, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267012600194055871, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].time
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331139, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331139, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: m_LocalPosition.x
