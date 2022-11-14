@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class gestureTest : MonoBehaviour
 {
+    Animator animator;
+
     [SerializeField]
     private OVRSkeleton _skeleton; //右手、もしくは左手の Bone情報
     private OVRHand _oVRHand;
@@ -35,6 +37,7 @@ public class gestureTest : MonoBehaviour
     void Start()
     {
         _oVRHand = GetComponent<OVRHand>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,7 +60,15 @@ public class gestureTest : MonoBehaviour
         // 親指だけが立っている
         if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
         {
-            Debug.Log("good");
+            Debug.Log("fire");
+            animator.SetBool("Fire", true);
+        }
+        // 親指と人差し指が立っている
+        else if (isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
+        {
+            Debug.Log("reload");
+            animator.SetBool("Fire", false);
+
         }
     }
 }
