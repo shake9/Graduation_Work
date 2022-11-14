@@ -61,17 +61,17 @@ public class boneTest : MonoBehaviour
         }
         else if (Choki)
         {
-            Debug.Log("チョキ");
+           // Debug.Log("チョキ");
             animator.SetBool("Fire", true);
         }
         else if (Paa)
         {
-            Debug.Log("パー");
+            //Debug.Log("パー");
             animator.SetBool("Fire", true);
         }
         else
         {
-            Debug.Log("読み込めん");
+            //Debug.Log("読み込めん");
             animator.SetBool("Fire", true);
         }
     }

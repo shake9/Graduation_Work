@@ -301,6 +301,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Drawing.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.IO.Compression.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll"
@@ -504,6 +505,7 @@
 
 /nowarn:0169
 /nowarn:0649
+-define:SYSTEM_DRAWING
 /utf8output
 /preferreduilang:en-US
 -warn:0

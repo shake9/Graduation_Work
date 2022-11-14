@@ -195,6 +195,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll"
@@ -718,6 +719,7 @@
 
 /nowarn:0169
 /nowarn:0649
+-define:SYSTEM_DRAWING
 /utf8output
 /preferreduilang:en-US
 -warn:0

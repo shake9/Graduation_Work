@@ -193,6 +193,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.24f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll"
@@ -314,6 +315,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Facebook.Wit.TTS.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Facebook.Wit.TTS.Samples.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Facebook.WitAI.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/lilToon.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/LitJson.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Oculus.AudioManager.Audio.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Oculus.AudioManager.ref.dll"
@@ -500,6 +502,10 @@
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiSceneMenu.cs"
 "Assets/Oculus/SampleFramework/Usage/TouchPro/Scripts/Ui/UiVectorInspector.cs"
 "Assets/Oculus/Voice/Lib/Wit.ai/AssemblyInfo.cs"
+"Assets/Scenes/boneTest.cs"
+"Assets/Scenes/EnemyGenerator.cs"
+"Assets/Scenes/handRay.cs"
+"Assets/Scenes/HitController.cs"
 -langversion:8.0
 
 /deterministic
@@ -510,5 +516,6 @@
 
 /nowarn:0169
 /nowarn:0649
+-define:SYSTEM_DRAWING
 /utf8output
 /preferreduilang:en-US
