@@ -2406,11 +2406,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: RotationModule.x.scalar
+      value: 17.453293
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: RotationModule.y.scalar
+      value: 17.453293
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: SizeModule.separateAxes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: 17.453293
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: SubModule.subEmitters.Array.size
