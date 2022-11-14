@@ -15,12 +15,12 @@ D:/UNITY/Graduation_Work/Graduation_work
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63160
+50785
 Successfully changed project path to: D:/UNITY/Graduation_Work/Graduation_work
 D:/UNITY/Graduation_Work/Graduation_work
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 202.06 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.61 ms.
+Refreshing native plugins compatible for Editor in 148.45 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.52 ms.
 Initialize engine version: 2021.1.24f1 (6667702a1e7c)
 [Subsystems] Discovering subsystems at path D:/UNITY_Data/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/UNITY/Graduation_Work/Graduation_work/Assets
@@ -36,50 +36,52 @@ Initialize mono
 Mono path[0] = 'D:/UNITY_Data/Editor/Data/Managed'
 Mono path[1] = 'D:/UNITY_Data/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/UNITY_Data/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56772
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/UNITY_Data/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001107 seconds.
+Registered in 0.001070 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 208.33 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 139.37 ms, found 8 plugins.
 Preloading 1 native plugins for Editor in 0.04 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.555 seconds
+- Completed reload, in  1.168 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1556ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (1169ms)
+		BeginReloadAssembly (58ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (739ms)
-			LoadAssemblies (77ms)
+		EndReloadAssembly (531ms)
+			LoadAssemblies (57ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (235ms)
+			SetupTypeCache (163ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (394ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (283ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (208ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (136ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
+				RefreshPlugins (139ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (105ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005979 seconds.
+Registered in 0.005130 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001F977162840 doesn't match image D:\UNITY\Graduation_Work\Graduation_work\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image D:\UNITY\Graduation_Work\Graduation_work\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\UNITY\Graduation_Work\Graduation_work\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 185.51 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 146.12 ms, found 8 plugins.
 Preloading 1 native plugins for Editor in 0.04 ms.
 [XR] OculusXRPlugin: registering subsystems
 [XR] Unable to register display lifecyle provider: [1]
@@ -87,46 +89,46 @@ Preloading 1 native plugins for Editor in 0.04 ms.
 [XR] Unable to register input lifecyle provider: [1]
 [XR] OVRP version 1.78.0
 Mono: successfully reloaded assembly
-- Completed reload, in  2.070 seconds
+- Completed reload, in  1.631 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2071ms)
-		BeginReloadAssembly (207ms)
+	ReloadAssembly (1631ms)
+		BeginReloadAssembly (161ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (1793ms)
-			LoadAssemblies (138ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1416ms)
+			LoadAssemblies (105ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (563ms)
+			SetupTypeCache (415ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (117ms)
-			SetupLoadedEditorAssemblies (847ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (699ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (186ms)
-				BeforeProcessingInitializeOnLoad (205ms)
-				ProcessInitializeOnLoadAttributes (420ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				RefreshPlugins (146ms)
+				BeforeProcessingInitializeOnLoad (169ms)
+				ProcessInitializeOnLoadAttributes (353ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 3.11 ms, found 8 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
-Unloading 5208 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 213.1 MB.
-System memory in use after: 206.4 MB.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.23 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.04 ms.
+Unloading 5189 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 206.9 MB.
+System memory in use after: 204.1 MB.
 
-Unloading 92 unused Assets to reduce memory usage. Loaded Objects now: 5597.
-Total: 16.442900 ms (FindLiveObjects: 1.092200 ms CreateObjectMapping: 0.842800 ms MarkObjects: 8.152000 ms  DeleteObjects: 6.353100 ms)
+Unloading 74 unused Assets to reduce memory usage. Loaded Objects now: 5596.
+Total: 5.526100 ms (FindLiveObjects: 0.509700 ms CreateObjectMapping: 0.285900 ms MarkObjects: 3.397800 ms  DeleteObjects: 1.331600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -140,12 +142,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/shake_asset/Bullets.controller
-  artifactKey: Guid(99298b86cc409f040afc66c29c433e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/shake_asset/Bullets.controller using Guid(99298b86cc409f040afc66c29c433e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08e5bfc91f186985f42c2e4fe365955d') in 0.105356 seconds 
+  path: Assets/shake_asset/Base.anim
+  artifactKey: Guid(085e1c214e3aea84598b3c9b68f0858e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/shake_asset/Base.anim using Guid(085e1c214e3aea84598b3c9b68f0858e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2f527ca449fabb15adaaa1603ad1c3') in 0.045340 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.228416 seconds.
-  path: Assets/shake_asset/Fire Ball.anim
-  artifactKey: Guid(89838e2be74cdcd4ca3290bd1e3251cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/shake_asset/Fire Ball.anim using Guid(89838e2be74cdcd4ca3290bd1e3251cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37b7ee115152ece65b36436cfe44dfaa') in 0.009559 seconds 
+  Time since last request: 0.165831 seconds.
+  path: Assets/shake_asset/Bullets.controller
+  artifactKey: Guid(99298b86cc409f040afc66c29c433e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/shake_asset/Bullets.controller using Guid(99298b86cc409f040afc66c29c433e7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7de66fd96002658fa16ea14d4b5ad5') in 0.005759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.089027 seconds.
+  path: Assets/shake_asset/particle
+  artifactKey: Guid(c452ce7e467ac2042b6f3b7e06c1153c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/shake_asset/particle using Guid(c452ce7e467ac2042b6f3b7e06c1153c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf6226a1821c68db8544512b3a106ade') in 0.002484 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
