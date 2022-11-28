@@ -70,5 +70,17 @@ public class gestureTest : MonoBehaviour
             animator.SetBool("Fire", false);
 
         }
+
+        // 親指関係なくそれ以外の指が全て立っている
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight)
+        {
+            Debug.Log("charge");
+            animator.SetBool("Charge", true);
+        }
+        else if(!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight)
+        {
+            Debug.Log("charge");
+            animator.SetBool("Charge", false);
+        }
     }
 }

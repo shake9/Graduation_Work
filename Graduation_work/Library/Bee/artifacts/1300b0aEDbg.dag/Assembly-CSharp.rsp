@@ -370,6 +370,8 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/VoiceSDK.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/VoiceSDK.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/VSSettingsProvider.ref.dll"
+"Assets/naichilab/FadeManager/Sample/FadeSample.cs"
+"Assets/naichilab/FadeManager/Scripts/FadeManager.cs"
 "Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/Hand.cs"
 "Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/HandPose.cs"
 "Assets/Oculus/SampleFramework/Core/DebugUI/Scripts/DebugUIBuilder.cs"
@@ -507,6 +509,7 @@
 "Assets/Scenes/gestureTest.cs"
 "Assets/Scenes/handRay.cs"
 "Assets/Scenes/HitController.cs"
+"Assets/Scenes/sceneChange.cs"
 -langversion:8.0
 
 /deterministic
