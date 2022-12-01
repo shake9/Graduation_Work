@@ -2,7 +2,6 @@ Library\Bee\artifacts\movedfrom\UnityEditor.TestRunner.ref.dll_12107268224522658
 Library\Bee\artifacts\movedfrom\UnityEditor.UI.ref.dll_104955431402218779.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.TestRunner.ref.dll_8368799695770714308.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.UI.ref.dll_13680447769613716870.movedfrom
-Library\Bee\artifacts\movedfrom\Unity.Plastic.Newtonsoft.Json.dll_13097885792894231255.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.Graphs.dll_5521539183670326890.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.CoreModule.dll_2609201547806090296.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.DeviceSimulatorModule.dll_8473021216574760713.movedfrom
@@ -83,3 +82,4 @@ Library\Bee\artifacts\movedfrom\UnityEngine.WindModule.dll_13665449002288385484.
 Library\Bee\artifacts\movedfrom\UnityEngine.XRModule.dll_8157268250988704782.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.Android.Extensions.dll_3434446504551074400.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.WindowsStandalone.Extensions.dll_3279392544796084456.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Plastic.Newtonsoft.Json.dll_6221313695058011855.movedfrom
