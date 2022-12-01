@@ -129,4 +129,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4299ec34095efec4a9279ce6cbb359ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Bullet
+  tag1: Bullet

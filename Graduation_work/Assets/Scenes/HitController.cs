@@ -5,7 +5,8 @@ using UnityEngine;
 public class HitController : MonoBehaviour
 {
     [SerializeField]
-    private string name;
+    private string tag1;
+    private string sokushi = "sokushi";
     private float Hp;
     private Animator animator;
 
@@ -28,11 +29,18 @@ public class HitController : MonoBehaviour
     //}
     private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag(name))
+        if (other.gameObject.CompareTag(tag1))
         {
             Debug.Log("ìGÇ∆íeÇ™è’ìÀÇµÇ‹ÇµÇΩÅIÅIÅI");
 
             Hp -= 0.25f;
+
+        }
+        else if (other.gameObject.CompareTag(sokushi))
+        {
+            Debug.Log("ìGÇ∆íeÇ™è’ìÀÇµÇ‹ÇµÇΩÅIÅIÅI");
+
+            Hp -= 1.0f;
 
         }
     }
