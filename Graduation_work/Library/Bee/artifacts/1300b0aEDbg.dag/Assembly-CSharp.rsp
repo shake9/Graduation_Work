@@ -509,6 +509,8 @@
 "Assets/Scenes/gestureTest.cs"
 "Assets/Scenes/handRay.cs"
 "Assets/Scenes/HitController.cs"
+"Assets/Scenes/L_gesture.cs"
+"Assets/Scenes/R_gesture.cs"
 "Assets/Scenes/sceneChange.cs"
 -langversion:8.0
 
