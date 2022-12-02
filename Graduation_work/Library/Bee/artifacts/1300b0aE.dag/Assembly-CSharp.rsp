@@ -510,8 +510,11 @@
 "Assets/Scenes/handRay.cs"
 "Assets/Scenes/HitController.cs"
 "Assets/Scenes/sceneChange.cs"
+"Assets/Scripts/Enemy/Attack/SimpleShoot.cs"
 "Assets/Scripts/Enemy/Bullet/EnemyBullet.cs"
 "Assets/Scripts/Enemy/EnemyController.cs"
+"Assets/Scripts/Enemy/Move/AbstractMove.cs"
+"Assets/Scripts/Enemy/Move/LinearMove.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
 "Assets/Utility/FunctionRepeater.cs"
 -langversion:8.0

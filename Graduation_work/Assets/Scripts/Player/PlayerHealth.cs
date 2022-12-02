@@ -7,8 +7,12 @@ public class PlayerHealth : MonoBehaviour
     // プレイヤーの最大体力(初期値)
     [SerializeField] private int playerMaxHealth = 10;
 
+    public int PlayerMaxHealth { get { return playerMaxHealth; } }
+
     // プレイヤーの体力(現在値)
     private int playerHealth = 0;
+
+    public int PlayerCurrentHealth { get { return playerHealth; } }
 
     private void Start()
     {
