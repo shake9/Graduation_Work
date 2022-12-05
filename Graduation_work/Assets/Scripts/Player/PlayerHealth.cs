@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     // プレイヤーの体力(現在値)
     private int playerHealth = 0;
 
+    private bool clearflag = false;
+
     private void Start()
     {
         // 最大値設定
@@ -31,5 +33,11 @@ public class PlayerHealth : MonoBehaviour
     public bool IsDead()
     {
         return playerHealth <= 0;
+    }
+
+    //ゲームクリアしたかどうか
+    public bool IsClear()
+    {
+        return clearflag;
     }
 }
