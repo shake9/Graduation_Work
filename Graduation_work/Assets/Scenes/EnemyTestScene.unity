@@ -420,7 +420,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5356067741305442589, guid: 71120c85b6f60c34cbb70f960e344475, type: 3}
   mintime: 2
   maxtime: 5
-  minXpos: -1
+  minXpos: -5
   maxXpos: 5
 --- !u!4 &536948638
 Transform:
