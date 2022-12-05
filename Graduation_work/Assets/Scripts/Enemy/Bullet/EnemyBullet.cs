@@ -6,19 +6,18 @@ public class EnemyBullet : MonoBehaviour
 {
     private Rigidbody bulletRb = null;
 
+    // 弾の速度
+    [SerializeField] private float speed = 1.0f;
+
     private void Awake()
     {
         // 自身のRigidbodyを取得
         bulletRb = GetComponent<Rigidbody>();
     }
 
-    public void Shoot(Vector3 position, Quaternion rotation, float speed)
+    private void Start()
     {
-        // ここで渡された座標と回転設定
-        transform.position = position;
-        transform.rotation = rotation;
-
-        // 前方向に飛ばす(仮。後で自身の設定ファイル参照に変える)
+        // 前方向に飛ばす
         bulletRb.velocity = transform.forward * speed;
     }
 
