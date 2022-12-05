@@ -514,6 +514,7 @@
 "Assets/Scripts/Enemy/Bullet/EnemyBullet.cs"
 "Assets/Scripts/Enemy/EnemyController.cs"
 "Assets/Scripts/Enemy/Move/AbstractMove.cs"
+"Assets/Scripts/Enemy/Move/HitAndRunMove.cs"
 "Assets/Scripts/Enemy/Move/LinearMove.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
 "Assets/Utility/FunctionRepeater.cs"

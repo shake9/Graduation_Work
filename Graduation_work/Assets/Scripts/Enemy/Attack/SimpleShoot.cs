@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(FunctionRepeater))]
 public class SimpleShoot : MonoBehaviour
 {
     // 弾のPrefab

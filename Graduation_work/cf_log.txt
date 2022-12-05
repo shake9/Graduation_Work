@@ -1,0 +1,1 @@
+Warning: None triangle mesh: blade (file: 'C:\K018A1473\4\Git\Graduation_Work\Graduation_work\Assets\shake_asset\mesh\BRAID.fbx') []

@@ -4,42 +4,44 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    //“GƒvƒŒƒnƒu
+    //ï¿½Gï¿½vï¿½ï¿½ï¿½nï¿½u
     public GameObject enemyPrefab;
-    //ŠÔŠÔŠu‚ÌÅ¬’l
+    //ï¿½ï¿½ï¿½ÔŠÔŠuï¿½ÌÅï¿½ï¿½l
     public float mintime = 2.0f;
-    //ŠÔŠÔŠu‚ÌÅ‘å’l
+    //ï¿½ï¿½ï¿½ÔŠÔŠuï¿½ÌÅ‘ï¿½l
     public float maxtime = 5.0f;
-    //ƒ‰ƒ“ƒ_ƒ€‚ÈXÀ•W‚ÌÅ¬’l
+    //ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Wï¿½ÌÅï¿½ï¿½l
     public float minXpos = -5.0f;
-    //ƒ‰ƒ“ƒ_ƒ€‚ÈXÀ•W‚ÌÅ‘å’l
+    //ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Wï¿½ÌÅ‘ï¿½l
     public float maxXpos = 5.0f;
-    //“G¶¬ŠÔŠÔŠu
+    //ï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔŠÔŠu
     private float interval;
-    //Œo‰ßŠÔ
+    //ï¿½oï¿½ßï¿½ï¿½ï¿½
     private float time = 0f;
 
-    // Start is called before the first frame update
+    // çµŒéæ™‚é–“
+    private float elapsedTime = 0.0f;
+
     void Start()
     {
-        //ŠÔŠÔŠu‚ğŒˆ’è‚·‚é
+        //ï¿½ï¿½ï¿½ÔŠÔŠuï¿½ï¿½ï¿½ï¿½ï¿½è‚·ï¿½ï¿½
         interval = GetRandomTime();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //ŠÔŒv‘ª
+        //ï¿½ï¿½ï¿½ÔŒvï¿½ï¿½
         time += Time.deltaTime;
+        elapsedTime += Time.deltaTime;
 
-        //Œo‰ßŠÔ‚ª¶¬ŠÔ‚É‚È‚Á‚½‚Æ‚«(¶¬ŠÔ‚æ‚è‘å‚«‚­‚È‚Á‚½‚Æ‚«)
+        //ï¿½oï¿½ßï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚É‚È‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½å‚«ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½)
         if (time > interval)
         {
-            //enemy‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚·‚é(¶¬‚·‚é)
+            //enemyï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
             GameObject enemy = Instantiate(enemyPrefab);
-            //¶¬‚µ‚½“G‚ÌÀ•W‚ğŒˆ’è‚·‚é(Œ»óX=0,Y=10,Z=20‚ÌˆÊ’u‚Éo—Í)
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½Ìï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½è‚·ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½X=0,Y=10,Z=20ï¿½ÌˆÊ’uï¿½Éoï¿½ï¿½)
             enemy.transform.position = GetRandomPosition();
-            //Œo‰ßŠÔ‚ğ‰Šú‰»‚µ‚ÄÄ“xŠÔŒv‘ª‚ğn‚ß‚é
+            //ï¿½oï¿½ßï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄÄ“xï¿½ï¿½ï¿½ÔŒvï¿½ï¿½ï¿½ï¿½ï¿½nï¿½ß‚ï¿½
             time = 0f;
             //
             interval = GetRandomTime();
@@ -49,13 +51,14 @@ public class EnemyGenerator : MonoBehaviour
     //
     private float GetRandomTime()
     {
-        return Random.Range(mintime, maxtime);
+        float ratio = 1.0f - elapsedTime * 0.01f;
+        return Random.Range(mintime, maxtime) * ratio;
     }
+
     private Vector3 GetRandomPosition()
     {
         float x = Random.Range(minXpos, maxXpos);
-        float y = Random.Range(0, maxXpos);
+        float y = transform.position.y;
         return new Vector3(x, y, 10f);
-
     }
 }

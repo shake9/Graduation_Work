@@ -17,7 +17,7 @@ public class LinearMove : AbstractMove
         Vector3 diff = enemyController.PlayerTransform.position - transform.position;
 
         // モデルをプレイヤーに向ける(Yを消す前に計算)
-        transform.forward = Vector3.Normalize(diff);;
+        modelTr.forward = Vector3.Normalize(diff);;
 
         // 平行移動したいのでYの差は考慮しない
         diff.y = 0.0f;
