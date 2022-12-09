@@ -5,6 +5,14 @@ using UnityEngine;
 public class gestureTest : MonoBehaviour
 {
     Animator animator;
+    AudioSource audioSource;
+    public AudioClip sound1;
+    public AudioClip sound2;
+    private bool fire = false;
+    private bool charge = false;
+    private bool Lsound = false;
+    private bool Rsound = false;
+    private float energy = 0.0f;
 
     [SerializeField]
     private OVRSkeleton _skeleton; //右手、もしくは左手の Bone情報
@@ -38,6 +46,7 @@ public class gestureTest : MonoBehaviour
     {
         _oVRHand = GetComponent<OVRHand>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,14 +70,68 @@ public class gestureTest : MonoBehaviour
         if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
         {
             Debug.Log("fire");
-            animator.SetBool("Fire", true);
+            fire = true;
+            //animator.SetBool("Fire", true);
+            //audioSource.PlayOneShot(sound1);
         }
         // 親指と人差し指が立っている
         else if (isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
         {
             Debug.Log("reload");
-            animator.SetBool("Fire", false);
+            fire = false;
+            //animator.SetBool("Fire", false);
 
         }
+
+        // 親指関係なくそれ以外の指が全て立っている
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight)
+        {
+            Debug.Log("charge");
+            charge = true;
+            if (energy <= 1.0f)
+            {
+                energy += 0.01f;
+            }
+            else
+            {
+                energy = 1.0f;
+            }
+
+            //animator.SetBool("Charge", true);
+        }
+        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight)
+        {
+            Debug.Log("charge");
+            charge = false;
+            //animator.SetBool("Charge", false);
+        }
+
+
+
+        if (Rsound && fire)
+        {
+            audioSource.PlayOneShot(sound1);
+            Rsound = false;
+        }
+
+        if (!fire)
+        {
+            Rsound = true;
+        }
+
+        if (Lsound && charge)
+        {
+            audioSource.PlayOneShot(sound2);
+            Lsound = false;
+        }
+
+        if (!charge)
+        {
+            Lsound = true;
+        }
+
+        animator.SetBool("Fire", fire);
+        animator.SetBool("Charge", charge);
+        animator.SetFloat("Energy", energy);
     }
 }

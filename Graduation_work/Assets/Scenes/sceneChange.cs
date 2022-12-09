@@ -66,23 +66,23 @@ public class sceneChange : MonoBehaviour
         }
 
         //clearしたらゲームクリア画面を表示する
-        clear = playerHealth.IsClear();
-        if (clear)
-        {
-            if (clearUIInstanse == null)
-            {
-                clearUIInstanse = GameObject.Instantiate(clearUIPrefab) as GameObject;
-                Time.timeScale = 0f;
-            }
+        //clear = playerHealth.IsClear();
+        //if (clear)
+        //{
+        //    if (clearUIInstanse == null)
+        //    {
+        //        clearUIInstanse = GameObject.Instantiate(clearUIPrefab) as GameObject;
+        //        Time.timeScale = 0f;
+        //    }
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                Destroy(clearUIInstanse);
-                Time.timeScale = 1f;
-                targetSceneName = "TitleScene";
-                FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
-            }
-        }
+        //    if (Input.GetKey(KeyCode.D))
+        //    {
+        //        Destroy(clearUIInstanse);
+        //        Time.timeScale = 1f;
+        //        targetSceneName = "TitleScene";
+        //        FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
+        //    }
+        //}
 
     }
 
