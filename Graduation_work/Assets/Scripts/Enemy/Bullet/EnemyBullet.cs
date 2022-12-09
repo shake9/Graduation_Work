@@ -31,6 +31,7 @@ public class EnemyBullet : MonoBehaviour
         var health = other.transform.GetComponent<PlayerHealth>();
         // ダメージ1は仮。後で設定ファイル参照に変える
         health.TakeDamage(1);
+        health.Hit();
 
         // 自身を破壊
         Destroy(gameObject);

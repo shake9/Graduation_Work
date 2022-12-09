@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     // プレイヤーの最大体力(初期値)
     [SerializeField] private int playerMaxHealth = 10;
+
+    public bool isHit = false;
 
     public int PlayerMaxHealth { get { return playerMaxHealth; } }
 
@@ -20,6 +23,15 @@ public class PlayerHealth : MonoBehaviour
         playerHealth = playerMaxHealth;
     }
 
+    private void FixedUpdate()
+    {
+        if(isHit)
+        {
+            isHit = false;
+        }
+        
+    }
+
     // ダメージを与える
     public void TakeDamage(int value)
     {
@@ -29,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
         playerHealth -= value;
 
         Debug.Log("PlayerHP:" + playerHealth);
+    }
+
+    public void Hit()
+    {
+        isHit = true;
     }
 
     // 死んでいるかどうか

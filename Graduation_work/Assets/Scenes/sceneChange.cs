@@ -47,7 +47,7 @@ public class sceneChange : MonoBehaviour
         }
 
          //死んでたらゲームオーバー画面を表示して画面を止める
-        dead = playerHealth.IsDead();
+        //dead = playerHealth.IsDead();
         if (dead)
         {
             if (overUIInstanse == null)
