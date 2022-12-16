@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(DifficultySetting.EnemySpawnRate))]
+[CustomPropertyDrawer(typeof(WaveSetting.EnemySpawnRate))]
 public class EnemySpawnRateDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

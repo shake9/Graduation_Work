@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+//TODO 時間経過での難易度増加を実装する
+//TODO ウェーブ数によって出現数が増えるようにする
 public class WaveManager : MonoBehaviour
 {
     // ウェーブ数
@@ -15,6 +18,9 @@ public class WaveManager : MonoBehaviour
 
     // 難易度設定
     [SerializeField] private DifficultySetting difficultySetting = null;
+
+    // アナウンス用テキスト
+    [SerializeField] private Text announceText = null;
 
     public void Start()
     {
@@ -39,10 +45,10 @@ public class WaveManager : MonoBehaviour
         // ウェーブ数の分ループ
         for (int i = 0; i < waveCount; i++)
         {
-            currentWave = GenerateWave(i + 1);
+            currentWave = GenerateWave(i);
 
             // TODO:ここでウェーブ開始演出
-            Debug.Log("ウェーブ" + (i + 1) + "開始！");
+            StartCoroutine(AnnounceText("ウェーブ" + (i + 1) + "開始！"));
 
             // 敵を全て沸かせるまで終了までループ
             while (!currentWave.IsSpawnEnd())
@@ -60,7 +66,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitUntil(() => { return currentWave.IsEnd(); });
 
             // TODO:ここでウェーブクリア演出
-            Debug.Log("ウェーブ" + (i + 1) + "終了！");
+            StartCoroutine(AnnounceText("ウェーブ" + (i + 1) + "終了！"));
 
             currentWave = null;
         }
@@ -70,7 +76,7 @@ public class WaveManager : MonoBehaviour
 
     private SimpleWave GenerateWave(int waveNum)
     {
-        return new SimpleWave(waveNum, 10, 1.0f, difficultySetting);
+        return new SimpleWave(waveNum + 1, 10, 1.0f, difficultySetting.waves[waveNum]);
     }
 
     private Vector3 GetRandomPosition()
@@ -78,5 +84,17 @@ public class WaveManager : MonoBehaviour
         float x = Random.Range(-enemySpawnRangeX, enemySpawnRangeX);
         float y = transform.position.y;
         return new Vector3(x, y, transform.position.z);
+    }
+
+    private IEnumerator AnnounceText(string text)
+    {
+        // テキスト表示
+        announceText.gameObject.SetActive(true);
+        announceText.text = text;
+
+        yield return new WaitForSeconds(0.5f);
+
+        // テキストを非表示に戻す
+        announceText.gameObject.SetActive(false);
     }
 }

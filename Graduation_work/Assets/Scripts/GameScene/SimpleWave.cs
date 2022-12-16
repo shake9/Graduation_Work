@@ -14,7 +14,7 @@ public class SimpleWave
     // ìGÇÃèoåªÉLÉÖÅ[
     private Queue<GameObject> spawnQueue;
 
-    public SimpleWave(int waveNum, int enemyCount, float timeBetweenSpawn, DifficultySetting difficultySetting)
+    public SimpleWave(int waveNum, int enemyCount, float timeBetweenSpawn, WaveSetting difficultySetting)
     {
         this.waveNum = waveNum;
         this.enemyCount = enemyCount;

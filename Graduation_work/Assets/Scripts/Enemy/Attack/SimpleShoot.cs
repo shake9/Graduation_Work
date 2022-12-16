@@ -12,6 +12,9 @@ public class SimpleShoot : MonoBehaviour
     // 射撃前エフェクト中かどうか
     private bool isInChargeEffect = false;
 
+    // エフェクト中の弾
+    private Transform bulletInstanceTr = null;
+
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
@@ -39,6 +42,7 @@ public class SimpleShoot : MonoBehaviour
     private IEnumerator ChargeEffectCoroutine(Transform bulletTransform)
     {
         isInChargeEffect = true;
+        bulletInstanceTr = bulletTransform;
 
         float currentTime = 0.0f;
 
@@ -57,6 +61,15 @@ public class SimpleShoot : MonoBehaviour
 
         bulletTransform.localScale = originScale;
 
+        bulletInstanceTr = null;
         isInChargeEffect = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (isInChargeEffect)
+        {
+            Destroy(bulletInstanceTr.gameObject);
+        }
     }
 }

@@ -521,6 +521,7 @@
 "Assets/Scripts/GameScene/DifficultySetting.cs"
 "Assets/Scripts/GameScene/SimpleWave.cs"
 "Assets/Scripts/GameScene/WaveManager.cs"
+"Assets/Scripts/GameScene/WaveSetting.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
 "Assets/Scripts/Utility/EnemySpawnRateDrawer.cs"
 "Assets/Scripts/Utility/FunctionRepeater.cs"
