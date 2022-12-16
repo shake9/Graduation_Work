@@ -48,7 +48,6 @@ public class EnemyGenerator : MonoBehaviour
         }
     }
 
-    //
     private float GetRandomTime()
     {
         float ratio = 1.0f - elapsedTime * 0.01f;

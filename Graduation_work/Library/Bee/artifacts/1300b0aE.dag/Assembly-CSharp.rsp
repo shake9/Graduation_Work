@@ -518,8 +518,13 @@
 "Assets/Scripts/Enemy/Move/AbstractMove.cs"
 "Assets/Scripts/Enemy/Move/HitAndRunMove.cs"
 "Assets/Scripts/Enemy/Move/LinearMove.cs"
+"Assets/Scripts/GameScene/DifficultySetting.cs"
+"Assets/Scripts/GameScene/SimpleWave.cs"
+"Assets/Scripts/GameScene/WaveManager.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
-"Assets/Utility/FunctionRepeater.cs"
+"Assets/Scripts/Utility/EnemySpawnRateDrawer.cs"
+"Assets/Scripts/Utility/FunctionRepeater.cs"
+"Assets/Scripts/Utility/RandomUtility.cs"
 -langversion:8.0
 
 /deterministic

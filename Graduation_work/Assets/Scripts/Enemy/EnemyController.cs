@@ -13,9 +13,13 @@ public class EnemyController : AbstractMove
     private Transform playerTr = null;
     public Transform PlayerTransform { get { return playerTr; } private set { playerTr = value; } }
 
+    // インスタンスの数
+    public static int enemyCount = 0;
+
     private void Awake()
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyCount++;
     }
 
     private void Update()
@@ -24,6 +28,16 @@ public class EnemyController : AbstractMove
         {
             Destroy(gameObject);
         }
+
+#if DEBUG
+        // デバッグ用の瞬殺機能(Kキー)
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            health = 0;
+            Destroy(gameObject);
+        }
+#endif
+
     }
 
     private void OnParticleCollision(GameObject other)
@@ -32,5 +46,10 @@ public class EnemyController : AbstractMove
         {
             health = 0;
         }
+    }
+
+    private void OnDestroy()
+    {
+        enemyCount--;
     }
 }
