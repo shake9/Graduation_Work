@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &536948637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,8 +2022,7 @@ MonoBehaviour:
   moveRangeX: 5
   moveRangeY: 0.5
   distanceZFromPlayer: 5
-  moveTime: 0.5
-  timeBetweenMove: 2
+  timeBetweenMove: 5
 --- !u!1 &2768406688431753418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2223528222208763153, guid: 35830bff6eb1fd14d82bee3027686763, type: 3}
+  chargeEffectTime: 3
 --- !u!114 &4247369576390900171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  moveSpeed: 1
+  moveSpeed: 3
 --- !u!54 &5627115933568411856
 Rigidbody:
   m_ObjectHideFlags: 0

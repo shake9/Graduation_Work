@@ -19,17 +19,6 @@ public class HitAndRunMove : AbstractMove
     // プレイヤーからの距離(Z)
     [SerializeField] private float distanceZFromPlayer;
 
-    // 線形補間用の時間
-    private float currentTime = 0.0f;
-
-    // 移動にかかる時間
-    [SerializeField] private float moveTime;
-
-    // 線形補間の開始位置
-    private Vector3 moveBeginPos;
-    // 線形補間の目的地
-    private Vector3 moveEndPos;
-
     // 一度移動してから再度移動開始するまでの時間
     [SerializeField] private float timeBetweenMove;
 
@@ -39,7 +28,7 @@ public class HitAndRunMove : AbstractMove
     private void Start()
     {
         // 登場演出(アニメーション)への数値渡しに書き換え予定
-        transform.position = CalculateMovePos(distanceZFromPlayer);
+        transform.position = CalculateMovePos(enemyController.PlayerTransform.position.z + distanceZFromPlayer);
 
         // 登場アニメーションが終わったら行動開始するように修正する
         StartCoroutine(MainCoroutine());
@@ -52,23 +41,6 @@ public class HitAndRunMove : AbstractMove
 
         // モデルをプレイヤーに向ける(Yを消す前に計算)
         modelTr.forward = Vector3.Normalize(diff);
-
-        // 移動中の処理
-        if (isMoving)
-        {
-            // タイマーを進める
-            currentTime += Time.deltaTime;
-
-            // 線形補間で移動
-            transform.position = Vector3.Lerp(moveBeginPos, moveEndPos, currentTime / moveTime);
-
-            // 指定時間経過したら移動停止
-            if (currentTime >= moveTime)
-            {
-                currentTime = 0.0f;
-                isMoving = false;
-            }
-        }
     }
 
     // 移動場所の算出
@@ -85,10 +57,8 @@ public class HitAndRunMove : AbstractMove
     {
         while (isActiveAndEnabled)
         {
-            // 移動開始
-            moveBeginPos = transform.position;
-            moveEndPos = CalculateMovePos(transform.position.z);
-            isMoving = true;
+            // 移動処理を開始
+            StartCoroutine(MoveCoroutine());
 
             // 移動終了まで待機する
             yield return new WaitUntil(() => 
@@ -97,10 +67,41 @@ public class HitAndRunMove : AbstractMove
             });
 
             // 攻撃する
-            attack.Shoot();
+            attack.Attack();
 
             // 次の行動まで待機
             yield return new WaitForSeconds(timeBetweenMove);
         }
+    }
+
+    // 移動用コルーチン
+    private IEnumerator MoveCoroutine()
+    {
+        // 移動開始
+        isMoving = true;
+        Vector3 moveBeginPos = transform.position;
+        Vector3 moveEndPos = CalculateMovePos(enemyController.PlayerTransform.position.z + distanceZFromPlayer);
+
+        // 差を計算
+        Vector3 diff = moveEndPos - moveBeginPos;
+        // 移動方向をあらかじめ計算しておく
+        Vector3 moveDir = Vector3.Normalize(diff);
+
+        float currentTime = 0.0f;
+        // 移動にかかる時間を計算
+        float endTime = diff.magnitude / enemyController.MoveSpeed;
+
+        // 移動が完了するまでループ
+        while (currentTime < endTime)
+        {
+            transform.position = transform.position + moveDir * enemyController.MoveSpeed * Time.fixedDeltaTime;
+
+            currentTime += Time.fixedDeltaTime;
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        transform.position = moveEndPos;
+        isMoving = false;
     }
 }
