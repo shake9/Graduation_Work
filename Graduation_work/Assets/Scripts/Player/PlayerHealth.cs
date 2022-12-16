@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
         playerHealth -= value;
 
-        Debug.Log("PlayerHP:" + playerHealth);
+        //Debug.Log("PlayerHP:" + playerHealth);
     }
 
     public void Hit()

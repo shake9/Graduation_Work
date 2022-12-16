@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
         bulletRb = GetComponent<Rigidbody>();
     }
 
-    private void Start()
+    public virtual void Shoot()
     {
         // 前方向に飛ばす
         bulletRb.velocity = transform.forward * speed;

@@ -96,8 +96,6 @@ GameObject:
   - component: {fileID: 7899917958488809033}
   - component: {fileID: 5270514509532874635}
   - component: {fileID: 2461287754276729673}
-  - component: {fileID: 5565606749580717174}
-  - component: {fileID: 2342422693599557685}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -132,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e543d1d9a90aa3148a5415a1bf8d54b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   moveSpeed: 1
 --- !u!114 &7899917958488809033
 MonoBehaviour:
@@ -176,38 +175,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5565606749580717174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5356067741305442589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4299ec34095efec4a9279ce6cbb359ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Bullet
---- !u!95 &2342422693599557685
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5356067741305442589}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af12587b525010847a1322082e8c9449, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5356067742114383660
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +224,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5356067742114383662}
         m_TargetAssemblyTypeName: SimpleShoot, Assembly-CSharp
-        m_MethodName: Shoot
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -281,3 +248,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2223528222208763153, guid: 35830bff6eb1fd14d82bee3027686763, type: 3}
+  chargeEffectTime: 0
