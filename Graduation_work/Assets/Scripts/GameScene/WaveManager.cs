@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-//TODO 時間経過での難易度増加を実装する
-//TODO ウェーブ数によって出現数が増えるようにする
 public class WaveManager : MonoBehaviour
 {
-    // ウェーブ数
-    [SerializeField] private int waveCount = 3;
+    // 自動で開始するか(デバッグ用)
+    [SerializeField] private bool autoStart = false;
+
+    // ウェーブとウェーブの間隔
+    [SerializeField] private float intervalBetweenWave = 2.0f;
+
+    // ウェーブの総数
+    private int waveCount = 3;
 
     // 現在のウェーブ
     private SimpleWave currentWave = null;
@@ -20,11 +23,22 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private DifficultySetting difficultySetting = null;
 
     // アナウンス用テキスト
-    [SerializeField] private Text announceText = null;
+    [SerializeField] private TextAnnouncer announceText = null;
 
     public void Start()
     {
-        StartCoroutine(MainCoroutine());
+        if (autoStart)
+            StartWave(0.0f);
+    }
+
+    /// <summary>
+    /// ゲーム開始
+    /// </summary>
+    /// <param name="delay">遅延実行(画面フェードと合わせる用)</param>
+    public void StartWave(float delay = 0.0f)
+    {
+        waveCount = difficultySetting.waves.Count;
+        StartCoroutine(MainCoroutine(delay));
     }
 
     public void StopWave()
@@ -37,9 +51,17 @@ public class WaveManager : MonoBehaviour
         return currentWave.waveNum == waveCount;
     }
 
-    // メインループ用
-    private IEnumerator MainCoroutine()
+    public int GetCurentWaveNum()
     {
+        return currentWave.waveNum;
+    }
+
+    // メインループ用
+    private IEnumerator MainCoroutine(float delay)
+    {
+        // ゲーム開始の遅延設定分待機
+        yield return new WaitForSeconds(delay);
+
         Debug.Log("ゲーム開始！");
 
         // ウェーブ数の分ループ
@@ -48,7 +70,7 @@ public class WaveManager : MonoBehaviour
             currentWave = GenerateWave(i);
 
             // TODO:ここでウェーブ開始演出
-            StartCoroutine(AnnounceText("ウェーブ" + (i + 1) + "開始！"));
+            announceText.AnnounceText("ウェーブ" + (i + 1) + "開始！");
 
             // 敵を全て沸かせるまで終了までループ
             while (!currentWave.IsSpawnEnd())
@@ -66,7 +88,10 @@ public class WaveManager : MonoBehaviour
             yield return new WaitUntil(() => { return currentWave.IsEnd(); });
 
             // TODO:ここでウェーブクリア演出
-            StartCoroutine(AnnounceText("ウェーブ" + (i + 1) + "終了！"));
+            announceText.AnnounceText("ウェーブ" + (i + 1) + "終了！");
+
+            // ウェーブ間隔の分待機
+            yield return new WaitForSeconds(intervalBetweenWave);
 
             currentWave = null;
         }
@@ -84,17 +109,5 @@ public class WaveManager : MonoBehaviour
         float x = Random.Range(-enemySpawnRangeX, enemySpawnRangeX);
         float y = transform.position.y;
         return new Vector3(x, y, transform.position.z);
-    }
-
-    private IEnumerator AnnounceText(string text)
-    {
-        // テキスト表示
-        announceText.gameObject.SetActive(true);
-        announceText.text = text;
-
-        yield return new WaitForSeconds(0.5f);
-
-        // テキストを非表示に戻す
-        announceText.gameObject.SetActive(false);
     }
 }

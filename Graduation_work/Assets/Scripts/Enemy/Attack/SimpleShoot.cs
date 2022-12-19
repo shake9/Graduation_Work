@@ -67,7 +67,7 @@ public class SimpleShoot : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (isInChargeEffect)
+        if (isInChargeEffect && bulletInstanceTr != null)
         {
             Destroy(bulletInstanceTr.gameObject);
         }
