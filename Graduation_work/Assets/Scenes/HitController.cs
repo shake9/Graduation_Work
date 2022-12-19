@@ -32,7 +32,7 @@ public class HitController : MonoBehaviour
         {
             Debug.Log("“G‚Æ’e‚ªÕ“Ë‚µ‚Ü‚µ‚½III");
 
-            Hp -= 0.25f;
+            Hp -= 1.1f;
 
         }
     }

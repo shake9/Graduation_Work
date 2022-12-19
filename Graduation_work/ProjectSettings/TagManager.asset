@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RoomLight
   - Bullet
+  - kill
   layers:
   - Default
   - TransparentFX
