@@ -15,8 +15,30 @@ public class EnemyBullet : MonoBehaviour
         bulletRb = GetComponent<Rigidbody>();
     }
 
-    public virtual void Shoot()
+    public virtual void Shoot(float chargeTime = 0.0f)
     {
+        StartCoroutine(ShootCoroutine(chargeTime));
+    }
+
+    private IEnumerator ShootCoroutine(float chargeTime)
+    {
+        if (chargeTime > 0.0f)
+        {
+            float elapsedTime = 0.0f;
+
+            Vector3 originScale = transform.localScale;
+            transform.localScale = Vector3.zero;
+
+            while (elapsedTime <= chargeTime)
+            {
+                yield return new WaitForFixedUpdate();
+
+                elapsedTime += Time.fixedDeltaTime;
+
+                transform.localScale = originScale * elapsedTime / chargeTime;
+            }
+        }
+
         // 前方向に飛ばす
         bulletRb.velocity = transform.forward * speed;
     }

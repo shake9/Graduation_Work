@@ -20,6 +20,9 @@ public class sceneChange : MonoBehaviour
     private GameObject overUIPrefab;
     //ゲームオーバーUIのインスタンス
     private GameObject overUIInstanse;
+    //フェード関連
+    [SerializeField]
+    OVRScreenFade fade;
 
 
     public PlayerHealth playerHealth;
@@ -126,6 +129,7 @@ public class sceneChange : MonoBehaviour
 
     void LoadScene()
     {
-        FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
+        fade.FadeIn();
+        SceneManager.LoadScene(targetSceneName);
     }
 }
