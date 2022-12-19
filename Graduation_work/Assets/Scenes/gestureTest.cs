@@ -8,6 +8,7 @@ public class gestureTest : MonoBehaviour
     AudioSource audioSource;
     public AudioClip sound1;
     public AudioClip sound2;
+    public bool IsL;
     private bool fire = false;
     private bool charge = false;
     private bool Lsound = false;
@@ -67,7 +68,7 @@ public class gestureTest : MonoBehaviour
         var isPinkyStraight = IsStraight(0.8f, OVRSkeleton.BoneId.Hand_Pinky0, OVRSkeleton.BoneId.Hand_Pinky1, OVRSkeleton.BoneId.Hand_Pinky2, OVRSkeleton.BoneId.Hand_Pinky3, OVRSkeleton.BoneId.Hand_PinkyTip);
 
         // 親指だけが立っている
-        if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && isThumbStraight && !IsL)
         {
             Debug.Log("fire");
             fire = true;
@@ -75,7 +76,7 @@ public class gestureTest : MonoBehaviour
             //audioSource.PlayOneShot(sound1);
         }
         // 親指と人差し指が立っている
-        else if (isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight)
+        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && !isThumbStraight && !IsL)
         {
             Debug.Log("reload");
             fire = false;
@@ -84,7 +85,7 @@ public class gestureTest : MonoBehaviour
         }
 
         // 親指関係なくそれ以外の指が全て立っている
-        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight)
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && IsL)
         {
             Debug.Log("charge");
             charge = true;
@@ -99,7 +100,7 @@ public class gestureTest : MonoBehaviour
 
             //animator.SetBool("Charge", true);
         }
-        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight)
+        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && IsL)
         {
             Debug.Log("charge");
             charge = false;
