@@ -1500,6 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
   sound2: {fileID: 0}
+  IsL: 0
   _skeleton: {fileID: 1672560759}
 --- !u!114 &1672560756 stripped
 MonoBehaviour:

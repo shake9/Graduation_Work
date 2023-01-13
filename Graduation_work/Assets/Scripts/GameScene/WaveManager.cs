@@ -20,13 +20,19 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float enemySpawnRangeX = 5.0f;
 
     // 難易度設定
-    [SerializeField] private DifficultySetting difficultySetting = null;
+    [SerializeField] private DifficultySetting localDifficultySetting = null;
 
     // アナウンス用テキスト
     [SerializeField] private TextAnnouncer announceText = null;
 
+    // 難易度設定(static)
+    public static DifficultySetting difficultySetting;
+
     public void Start()
     {
+        if (difficultySetting != null)
+            localDifficultySetting = difficultySetting;
+
         if (autoStart)
             StartWave(0.0f);
     }
@@ -37,7 +43,7 @@ public class WaveManager : MonoBehaviour
     /// <param name="delay">遅延実行(画面フェードと合わせる用)</param>
     public void StartWave(float delay = 0.0f)
     {
-        waveCount = difficultySetting.waves.Count;
+        waveCount = localDifficultySetting.waves.Count;
         StartCoroutine(MainCoroutine(delay));
     }
 
@@ -101,7 +107,7 @@ public class WaveManager : MonoBehaviour
 
     private SimpleWave GenerateWave(int waveNum)
     {
-        return new SimpleWave(waveNum + 1, 10, 1.0f, difficultySetting.waves[waveNum]);
+        return new SimpleWave(waveNum + 1, 10, 1.0f, localDifficultySetting.waves[waveNum]);
     }
 
     private Vector3 GetRandomPosition()
