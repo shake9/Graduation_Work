@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b098bfc18d4ac646a1844ab6f4e84f0, type: 3}
+  m_Name: Normal_Wave3
+  m_EditorClassIdentifier: 
+  enemySpawnRates:
+  - spawnRate: 50
+    enemyPrefab: {fileID: 5356067741305442589, guid: 71120c85b6f60c34cbb70f960e344475, type: 3}
+  - spawnRate: 25
+    enemyPrefab: {fileID: 3328269416497370115, guid: cf7a30763d3639c4c94ffab4ba01b9ea, type: 3}
