@@ -43,11 +43,15 @@ public class ScoreManager : MonoBehaviour
     // 敵キル時スコア
     private int enemyKillScore;
 
+	public int EnemyKillScore { get { return enemyKillScore; } }
+
 	// プレイヤーの被弾回数
 	private int damageCount;
 
+	public int DamageCount { get { return damageCount; } }
+
 	// スコア追加時のコールバック
-	[HideInInspector] public UnityEvent<int, ScoreType> onScoreAdd;
+	[HideInInspector] public UnityEvent<int, ScoreType> onScoreAdd = new UnityEvent<int, ScoreType>();
 
 	private void Start()
     {

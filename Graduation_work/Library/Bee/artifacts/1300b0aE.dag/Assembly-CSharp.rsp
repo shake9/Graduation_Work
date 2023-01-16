@@ -523,6 +523,7 @@
 "Assets/Scripts/GameScene/WaveManager.cs"
 "Assets/Scripts/GameScene/WaveSetting.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
+"Assets/Scripts/ResultScene/ResultDisplay.cs"
 "Assets/Scripts/ScoreManager.cs"
 "Assets/Scripts/UI/DifficultyButton.cs"
 "Assets/Scripts/UI/ScoreDisplay.cs"
