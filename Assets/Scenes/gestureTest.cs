@@ -13,8 +13,14 @@ public class gestureTest : MonoBehaviour
     private bool charge = false;
     private bool Lsound = false;
     private bool Rsound = false;
-    private float energy = 0.0f;
+    public bool Sp = false;
+    public bool Isspel = false;
+    public float energy = 0.0f;
+    private float bullet = 0.0f;
 
+    [SerializeField] gestureTest L_ene;
+    [SerializeField] GameObject energy_tank;
+    [SerializeField] sp_spel sp;
     [SerializeField]
     private OVRSkeleton _skeleton; //右手、もしくは左手の Bone情報
     private OVRHand _oVRHand;
@@ -45,6 +51,7 @@ public class gestureTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        energy = 0.0f;
         _oVRHand = GetComponent<OVRHand>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -70,8 +77,25 @@ public class gestureTest : MonoBehaviour
         // 親指だけが立っている
         if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && isThumbStraight && !IsL)
         {
-            Debug.Log("fire");
-            fire = true;
+            if(L_ene.energy >= 0.2f)
+            {
+                if(bullet < 1.0f)
+                {
+                    animator.SetBool("stop", false);
+                    Debug.Log("fire");
+                    fire = true;
+                    L_ene.energy -= 0.025f;
+                    bullet += 0.1f;
+                }
+                animator.SetBool("stop", true);
+            }
+            else
+            {
+                L_ene.energy = 0.0f;
+                animator.SetBool("stop", true);
+            }
+            
+
             //animator.SetBool("Fire", true);
             //audioSource.PlayOneShot(sound1);
         }
@@ -80,8 +104,21 @@ public class gestureTest : MonoBehaviour
         {
             Debug.Log("reload");
             fire = false;
+            animator.SetBool("stop", true);
+            bullet = 0.0f;
             //animator.SetBool("Fire", false);
 
+        }
+
+        if (isIndexStraight && isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight && !IsL)
+        {
+            Isspel = true;
+            animator.SetBool("spel", true);
+        }
+        else
+        {
+            Isspel = false;
+            animator.SetBool("spel", false);
         }
 
         // 親指関係なくそれ以外の指が全て立っている
@@ -131,8 +168,28 @@ public class gestureTest : MonoBehaviour
             Lsound = true;
         }
 
+        if(Sp)
+        {
+            animator.SetBool("SP_Fire", true);
+            sp.Isfire = true;
+        }
+        else
+        {
+            animator.SetBool("SP_Fire", false);
+        }
+
         animator.SetBool("Fire", fire);
         animator.SetBool("Charge", charge);
         animator.SetFloat("Energy", energy);
+    }
+
+    public void setE (float f)
+    {
+        f = energy;
+    }
+
+    public float getE ()
+    {
+        return energy;
     }
 }

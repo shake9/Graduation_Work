@@ -28,8 +28,13 @@ public class WaveManager : MonoBehaviour
     // 難易度設定(static)
     public static DifficultySetting difficultySetting;
 
+    // クリアしたかどうか
+    public bool isClear = false;
+
     public void Start()
     {
+        isClear = false;
+
         if (difficultySetting != null)
             localDifficultySetting = difficultySetting;
 
@@ -101,7 +106,7 @@ public class WaveManager : MonoBehaviour
 
             currentWave = null;
         }
-
+        isClear = true;
         Debug.Log("ゲーム終了！");
     }
 

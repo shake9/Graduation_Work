@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : AbstractMove
 {
     // 体力
     [SerializeField] private int health = 1;
@@ -24,40 +24,28 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
 #if DEBUG
         // デバッグ用の瞬殺機能(Kキー)
         if (Input.GetKeyDown(KeyCode.K))
         {
-            ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);
             health = 0;
+            Destroy(gameObject);
         }
 #endif
 
-        if (health <= 0)
-        {
-            Death();
-        }
-    }
-
-    private void Death()
-    {
-        Destroy(gameObject);
     }
 
     private void OnParticleCollision(GameObject other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            ScoreManager.Instance.AddEnemyKillScore(100, ScoreManager.ScoreType.Special);
             health = 0;
         }
-
-        // 必殺技で死んだときの処理は必殺技追加後に実装
-        //if (other.gameObject.CompareTag("SpecialBullet"))
-        //{
-        //    ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);
-        //    health = 0;
-        //}
     }
 
     private void OnDestroy()

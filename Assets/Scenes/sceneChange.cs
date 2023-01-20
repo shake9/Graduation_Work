@@ -24,8 +24,12 @@ public class sceneChange : MonoBehaviour
     [SerializeField]
     OVRScreenFade fade;
 
+    [SerializeField] WaveManager waveManager;
+
 
     public PlayerHealth playerHealth;
+    private int time = 0;
+    bool move = false;
     bool dead = false;
     bool clear = false;
     bool ishit = false;
@@ -43,6 +47,7 @@ public class sceneChange : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         ishit = false;
         isHitTrigger = true;
+        time = 0;
     }
 
     // Update is called once per frame
@@ -52,8 +57,19 @@ public class sceneChange : MonoBehaviour
         {
             //音を鳴らす
             audioSource.PlayOneShot(sound);
+           
+            move = true;
+        }
+        if(move)
+        {
+            time++;
+        }
+
+        if(move && time >= 300)
+        {
             LoadScene();
             isHitTrigger = false;
+            move = false;
         }
 
 
@@ -81,10 +97,11 @@ public class sceneChange : MonoBehaviour
             if (overUIInstanse == null)
             {
                 overUIInstanse = GameObject.Instantiate(overUIPrefab) as GameObject;
-                Time.timeScale = 0f;
+                Time.timeScale = 0.5f;
+                
             }
-
-            if (Input.GetKeyDown(KeyCode.D))
+            time++;
+            if (Input.GetKeyDown(KeyCode.D)|| time >= 120)
             {
                 Time.timeScale = 1f;
                 targetSceneName = "TitleScene";
@@ -93,23 +110,32 @@ public class sceneChange : MonoBehaviour
         }
 
         //clearしたらゲームクリア画面を表示する
-        //clear = playerHealth.IsClear();
-        //if (clear)
-        //{
-        //    if (clearUIInstanse == null)
-        //    {
-        //        clearUIInstanse = GameObject.Instantiate(clearUIPrefab) as GameObject;
-        //        Time.timeScale = 0f;
-        //    }
-
-        //    if (Input.GetKey(KeyCode.D))
-        //    {
-        //        Destroy(clearUIInstanse);
-        //        Time.timeScale = 1f;
-        //        targetSceneName = "TitleScene";
-        //        FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
-        //    }
-        //}
+        if(waveManager != null)
+        {
+            clear = waveManager.isClear;
+        }
+        else
+        {
+            clear = false;
+        }
+        
+        if (clear)
+        {
+            //if (clearUIInstanse == null)
+            //{
+            //    //clearUIInstanse = GameObject.Instantiate(clearUIPrefab) as GameObject;
+            //    Time.timeScale = 1f;
+            //}
+            time++;
+            if (Input.GetKey(KeyCode.D) || time >= 240)
+            {
+                //Destroy(clearUIInstanse);
+                Time.timeScale = 1f;
+                targetSceneName = "TitleScene";
+                LoadScene();
+                //FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
+            }
+        }
 
     }
 

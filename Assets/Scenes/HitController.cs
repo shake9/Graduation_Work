@@ -6,6 +6,7 @@ public class HitController : MonoBehaviour
 {
     [SerializeField]
     private string name;
+    [SerializeField]
     private float Hp;
     private Animator animator;
 
