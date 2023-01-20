@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
         playerHealth -= value;
 
-        //Debug.Log("PlayerHP:" + playerHealth);
+        ScoreManager.Instance.AddPlayerDamageCount(1);
     }
 
     public void Hit()

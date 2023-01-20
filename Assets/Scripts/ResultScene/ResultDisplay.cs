@@ -19,8 +19,8 @@ public class ResultDisplay : MonoBehaviour
 
     private void Start()
     {
-        ScoreManager.Instance.AddEnemyKillScore(100000, ScoreManager.ScoreType.Normal);
-        ScoreManager.Instance.AddPlayerDamageCount(10);
+        //ScoreManager.Instance.AddEnemyKillScore(100000, ScoreManager.ScoreType.Normal);
+        //ScoreManager.Instance.AddPlayerDamageCount(10);
 
         StartCoroutine(ResultCoroutine());
     }
