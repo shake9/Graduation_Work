@@ -17,5 +17,6 @@ public class WaveSetting : ScriptableObject
         }
     }
 
+    public int enemyCount = 5;
     public List<EnemySpawnRate> enemySpawnRates;
 }

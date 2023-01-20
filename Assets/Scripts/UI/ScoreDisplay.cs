@@ -56,23 +56,20 @@ public class ScoreDisplay : MonoBehaviour
         switch (scoreType)
         {
             case ScoreManager.ScoreType.Normal:
-                scoreText = Instantiate(normalTextPrefab);
+                scoreText = Instantiate(normalTextPrefab, scoreTextParent.transform);
                 // Textを取得
                 text = scoreText.GetComponent<Text>();
                 // テキスト設定
                 text.text = "＋" + value + " KILL";
                 break;
             case ScoreManager.ScoreType.Special:
-                scoreText = Instantiate(specialTextPrefab);
+                scoreText = Instantiate(specialTextPrefab, scoreTextParent.transform);
                 // Textを取得
                 text = scoreText.GetComponent<Text>();
                 // テキスト設定
                 text.text = "＋" + value + " OVERKILL!!!";
                 break;
         }
-
-        // 親子関係を設定
-        scoreText.transform.SetParent(scoreTextParent.transform);
 
         // キューに登録
         scoreTextQueue.Enqueue(scoreText);

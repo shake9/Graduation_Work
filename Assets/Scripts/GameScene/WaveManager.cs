@@ -106,13 +106,13 @@ public class WaveManager : MonoBehaviour
 
             currentWave = null;
         }
-        isClear = true;
         Debug.Log("ÉQÅ[ÉÄèIóπÅI");
     }
 
     private SimpleWave GenerateWave(int waveNum)
     {
-        return new SimpleWave(waveNum + 1, 10, 1.0f, localDifficultySetting.waves[waveNum]);
+        var wave = localDifficultySetting.waves[waveNum];
+        return new SimpleWave(waveNum + 1, wave.enemyCount, 1.0f, wave);
     }
 
     private Vector3 GetRandomPosition()

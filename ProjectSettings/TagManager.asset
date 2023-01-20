@@ -7,6 +7,11 @@ TagManager:
   - RoomLight
   - Bullet
   - kill
+  - hand
+  - title
+  - R_page
+  - L_page
+  - SpecialBullet
   layers:
   - Default
   - TransparentFX

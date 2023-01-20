@@ -34,6 +34,7 @@ public class sceneChange : MonoBehaviour
     bool clear = false;
     bool ishit = false;
     bool isHitTrigger = false;
+    bool isTitleHit = false;
 
     public AudioClip sound;
     AudioSource audioSource;
@@ -92,7 +93,7 @@ public class sceneChange : MonoBehaviour
         //    }
         //}
 
-        if (dead)
+        /*if (dead)
         {
             if (overUIInstanse == null)
             {
@@ -107,7 +108,7 @@ public class sceneChange : MonoBehaviour
                 targetSceneName = "TitleScene";
                 LoadScene();
             }
-        }
+        }*/
 
         //clearしたらゲームクリア画面を表示する
         if(waveManager != null)
@@ -118,23 +119,33 @@ public class sceneChange : MonoBehaviour
         {
             clear = false;
         }
-        
-        if (clear)
+
+        if (clear || dead || Input.GetKey(KeyCode.D))
         {
             //if (clearUIInstanse == null)
             //{
             //    //clearUIInstanse = GameObject.Instantiate(clearUIPrefab) as GameObject;
             //    Time.timeScale = 1f;
             //}
-            time++;
-            if (Input.GetKey(KeyCode.D) || time >= 240)
-            {
-                //Destroy(clearUIInstanse);
-                Time.timeScale = 1f;
-                targetSceneName = "TitleScene";
-                LoadScene();
-                //FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
-            }
+            //time++;
+            //if (Input.GetKey(KeyCode.D) || time >= 240)
+            //{
+            //    //Destroy(clearUIInstanse);
+            //    Time.timeScale = 1f;
+            //    targetSceneName = "TitleScene";
+            //    LoadScene();
+            //    //FadeManager.Instance.LoadScene(targetSceneName, 2.0f);
+            //}
+
+            targetSceneName = "ResultScene"; 
+            LoadScene();
+        }
+
+        if(isTitleHit && isHitTrigger)
+        {
+            targetSceneName = "TitleScene";
+            LoadScene();
+            isHitTrigger = false;
         }
 
     }
@@ -148,6 +159,13 @@ public class sceneChange : MonoBehaviour
         {
 
             ishit = true;
+        }
+
+        //衝突したオブジェクトがBullet(大砲の弾)だったとき
+        if (other.gameObject.CompareTag("title"))
+        {
+
+            isTitleHit = true;
         }
         Debug.Log("敵と弾が衝突しました！！！");
 

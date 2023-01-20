@@ -62,6 +62,12 @@ public class ScoreManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+		if (gameObject.scene.name == "TitleScene")
+		{
+			enemyKillScore = 0;
+			damageCount = 0;
+		}
     }
 
 	/// <summary>
