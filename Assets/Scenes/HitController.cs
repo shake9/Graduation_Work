@@ -29,7 +29,7 @@ public class HitController : MonoBehaviour
     //}
     private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag(name))
+        if (other.gameObject.CompareTag(name)|| other.gameObject.CompareTag("SpecialBullet"))
         {
             Debug.Log("ìGÇ∆íeÇ™è’ìÀÇµÇ‹ÇµÇΩÅIÅIÅI");
 

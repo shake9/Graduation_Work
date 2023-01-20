@@ -106,6 +106,7 @@ public class WaveManager : MonoBehaviour
 
             currentWave = null;
         }
+        isClear = true;
         Debug.Log("ƒQ[ƒ€I—¹I");
     }
 
