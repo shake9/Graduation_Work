@@ -19,8 +19,8 @@ public class ResultDisplay : MonoBehaviour
 
     private void Start()
     {
-        //ScoreManager.Instance.AddEnemyKillScore(100000, ScoreManager.ScoreType.Normal);
-        //ScoreManager.Instance.AddPlayerDamageCount(10);
+        ScoreManager.Instance.AddEnemyKillScore(100000, ScoreManager.ScoreType.Normal);
+        ScoreManager.Instance.AddPlayerDamageCount(11);
 
         StartCoroutine(ResultCoroutine());
     }
@@ -50,27 +50,21 @@ public class ResultDisplay : MonoBehaviour
         // 待機
         yield return new WaitForSeconds(0.5f);
 
+        // 最終スコア
+        int totalScore = score - damageScore;
+
+        // 桁数
+        int level = totalScore.ToString().Length;
+
         // 最終スコア表示
         totalScoreText.gameObject.SetActive(true);
 
-        // 最終スコアまでゆっくり上げる
-        int displayScore = 0;
-        int totalScore = score - damageScore;
-
-        // フレーム数
-        float fps = 1.0f / Time.fixedDeltaTime;
-
-        // 5秒で表示しきれるように計算
-        int increment = totalScore / (int)(fps * 5.0f);
-
-        while (displayScore < totalScore)
+        // 1桁ずつ表示
+        for (int i = 0; i < level + 1; i++)
         {
-            totalScoreText.text = displayScore.ToString();
-            displayScore += increment;
+            totalScoreText.text = totalScore.ToString().Substring(level - i, i);
 
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(0.5f);
         }
-
-        totalScoreText.text = totalScore.ToString();
     }
 }

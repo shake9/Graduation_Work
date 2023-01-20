@@ -64,7 +64,28 @@ public class WaveManager : MonoBehaviour
 
     public int GetCurentWaveNum()
     {
+        if (currentWave == null)
+            return 0;
+
         return currentWave.waveNum;
+    }
+
+    public int GetMaxWaveNum()
+    {
+        return waveCount;
+    }
+
+    public int GetCurrentEnemyNum()
+    {
+        return EnemyController.enemyCount;
+    }
+
+    public int GetMaxEnemyNum()
+    {
+        if (currentWave == null)
+            return 0;
+
+        return currentWave.maxEnemyCount;
     }
 
     // メインループ用
