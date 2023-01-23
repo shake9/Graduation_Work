@@ -17,7 +17,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void Update()
     {
-        transform.eulerAngles += new Vector3(0.0f, 0.0f, 360.0f * Time.deltaTime);
+        transform.eulerAngles += new Vector3(0.0f, 0.0f, 3600.0f * Time.deltaTime);
     }
 
     public virtual void Shoot(float chargeTime = 0.0f)
