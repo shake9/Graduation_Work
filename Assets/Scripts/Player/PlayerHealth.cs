@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     // プレイヤーの最大体力(初期値)
     [SerializeField] private int playerMaxHealth = 10;
 
+    // 無敵モード(デバッグ用)
+    [SerializeField] private bool debug_PlayerInvincivle = false;
+
     public bool isHit = false;
 
     public int PlayerMaxHealth { get { return playerMaxHealth; } }
@@ -35,6 +38,12 @@ public class PlayerHealth : MonoBehaviour
     // ダメージを与える
     public void TakeDamage(int value)
     {
+#if DEBUG
+        // 無敵モードならreturn
+        if (debug_PlayerInvincivle)
+            return;
+#endif
+
         if (IsDead())
             return;
 

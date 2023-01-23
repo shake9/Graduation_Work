@@ -8,7 +8,7 @@ public class SimpleWave
     public readonly int waveNum;
 
     // “G‚ÌoŒ»”
-    public readonly int enemyCount;
+    public readonly int maxEnemyCount;
     // “G‚ÌoŒ»ŠÔŠu
     public readonly float timeBetweenSpawn = 0.0f;
     // “G‚ÌoŒ»ƒLƒ…[
@@ -17,7 +17,7 @@ public class SimpleWave
     public SimpleWave(int waveNum, int enemyCount, float timeBetweenSpawn, WaveSetting difficultySetting)
     {
         this.waveNum = waveNum;
-        this.enemyCount = enemyCount;
+        this.maxEnemyCount = enemyCount;
         this.timeBetweenSpawn = timeBetweenSpawn;
 
         spawnQueue = new Queue<GameObject>();

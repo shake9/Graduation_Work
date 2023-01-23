@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
         // デバッグ用の瞬殺機能(Kキー)
         if (Input.GetKeyDown(KeyCode.K))
         {
-            ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);
+            ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Normal);
             health = 0;
         }
 #endif
