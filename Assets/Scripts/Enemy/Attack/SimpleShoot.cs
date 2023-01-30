@@ -12,7 +12,7 @@ public class SimpleShoot : MonoBehaviour
     public void Attack()
     {
         // 弾生成して座標と回転設定
-        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform);
         bulletInstance.transform.position = transform.position;
         bulletInstance.transform.rotation = transform.rotation;
 

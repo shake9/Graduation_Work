@@ -11,6 +11,9 @@ public class LinearMove : AbstractMove
     // モデルのTransform
     [SerializeField] private Transform modelTr = null;
 
+    // 回転部分
+    [SerializeField] private Transform rotatePart = null;
+
     private void Update()
     {
         // プレイヤーとの座標の差を計算
@@ -37,5 +40,7 @@ public class LinearMove : AbstractMove
             // 移動する
             transform.position = transform.position + move;
         }
+
+        rotatePart.localEulerAngles += new Vector3(45.0f * Time.deltaTime, -30.0f * Time.deltaTime, 0.0f);
     }
 }

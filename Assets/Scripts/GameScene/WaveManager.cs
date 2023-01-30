@@ -17,7 +17,10 @@ public class WaveManager : MonoBehaviour
     private SimpleWave currentWave = null;
 
     // 出現範囲(X)
-    [SerializeField] private float enemySpawnRangeX = 5.0f;
+    [SerializeField] private float spawnRangeX = 5.0f;
+
+    // 出現範囲(Y)
+    [SerializeField] private float spawnRangeY = 3.0f;
 
     // 難易度設定
     [SerializeField] private DifficultySetting localDifficultySetting = null;
@@ -102,9 +105,9 @@ public class WaveManager : MonoBehaviour
             currentWave = GenerateWave(i);
 
             // TODO:ここでウェーブ開始演出
-            announceText.AnnounceText("ウェーブ" + (i + 1) + "開始！");
+            announceText.AnnounceText("ウェーブ" + (i + 1) + " 開始！");
 
-            // 敵を全て沸かせるまで終了までループ
+            // 敵を全て沸かせるまでループ
             while (!currentWave.IsSpawnEnd())
             {
                 // 敵を生成
@@ -134,13 +137,22 @@ public class WaveManager : MonoBehaviour
     private SimpleWave GenerateWave(int waveNum)
     {
         var wave = localDifficultySetting.waves[waveNum];
-        return new SimpleWave(waveNum + 1, wave.enemyCount, 1.0f, wave);
+        return new SimpleWave(waveNum + 1, wave.enemyCount, 3.0f, wave);
     }
 
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-enemySpawnRangeX, enemySpawnRangeX);
-        float y = transform.position.y;
+        float x = Random.Range(-spawnRangeX, spawnRangeX) + transform.position.x;
+        float y = Random.Range(-spawnRangeY, spawnRangeY) + transform.position.y;
+
         return new Vector3(x, y, transform.position.z);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Color preColor = Gizmos.color;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position, new Vector3(spawnRangeX * 2.0f, spawnRangeY * 2.0f, 1.0f));
+        Gizmos.color = preColor;
     }
 }
