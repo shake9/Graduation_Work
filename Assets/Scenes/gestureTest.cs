@@ -17,6 +17,8 @@ public class gestureTest : MonoBehaviour
     public bool Isspel = false;
     public float energy = 0.0f;
     private float bullet = 0.0f;
+    private float SpCharge = 0.0f;
+    private int timer = 0;
 
     [SerializeField] gestureTest L_ene;
     [SerializeField] GameObject energy_tank;
@@ -52,6 +54,8 @@ public class gestureTest : MonoBehaviour
     void Start()
     {
         energy = 0.0f;
+        SpCharge = 1.0f;
+        timer = 0;
         _oVRHand = GetComponent<OVRHand>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -172,15 +176,33 @@ public class gestureTest : MonoBehaviour
         {
             animator.SetBool("SP_Fire", true);
             sp.Isfire = true;
+            SpCharge = 0.0f;
+            timer = 0;
         }
         else
         {
             animator.SetBool("SP_Fire", false);
         }
 
+        if(timer<=60*7)
+        {
+            timer++;
+        }
+        else
+        {
+            SpCharge = 1.0f;
+        }
+
+        //if (timer % 30 == 0)
+        //{
+        //    SpCharge += 0.05f;
+        //}
+
+
         animator.SetBool("Fire", fire);
         animator.SetBool("Charge", charge);
         animator.SetFloat("Energy", energy);
+        animator.SetFloat("SP_power", SpCharge);
     }
 
     public void setE (float f)

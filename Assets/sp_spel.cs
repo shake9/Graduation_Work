@@ -18,14 +18,15 @@ public class sp_spel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(L_hit)
+        if (L_hit || R_hit)
         {
             time++;
         }
         
-        if (time >= 10)
+        if (time >= 30)
         {
             L_hit = false;
+            R_hit = false;
             time = 0;
         }
 
@@ -37,6 +38,7 @@ public class sp_spel : MonoBehaviour
         if(Isfire)
         {
             R_spel.Sp = false;
+            R_hit = false;
             Isfire = false;
         }
     }
