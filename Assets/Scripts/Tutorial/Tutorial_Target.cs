@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tutorial_Shoot : MonoBehaviour, ITutorial
+public class Tutorial_Target : MonoBehaviour, ITutorial
 {
     [SerializeField] private Text text;
     [SerializeField] private TextFader textFader;
     [SerializeField] private AudioSource successAudio;
 
     [SerializeField] private string text_Intro;
-    [SerializeField] private string text_ShootOnce;
-    [SerializeField] private string text_ShootRepeat;
+    [SerializeField] private string text_ShootTargets;
     [SerializeField] private string text_Clear;
 
     [SerializeField] private float intervalBetweenText = 0.5f;
+    [SerializeField] private List<ShootTarget> targets = new List<ShootTarget>();
 
     private bool isClear = false;
 
@@ -25,6 +25,11 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
 
     private void Start()
     {
+        foreach (var target in targets)
+        {
+            target.gameObject.SetActive(false);
+        }
+
         StartCoroutine(TextCoroutine());
     }
 
@@ -42,37 +47,23 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
             yield return new WaitWhile(textFader.IsInFade);
         }
 
-        // 射撃チュートリアル
+        // 狙うチュートリアル
         {
-            // お手本を見せて真似してもらう
-            ShowText(text_ShootOnce);
+            // 複数ターゲットを狙う
+            ShowText(text_ShootTargets);
             textFader.FadeIn();
+
+            // 的を出す
+            foreach (var target in targets)
+            {
+                target.gameObject.SetActive(true);
+            }
+
             yield return new WaitWhile(textFader.IsInFade);
 
             // 1回成功するまで待つ
             yield return new WaitUntil(IsShootSuccess);
             successAudio.Play();
-
-            textFader.FadeOut();
-            yield return new WaitWhile(textFader.IsInFade);
-        }
-
-        // 3回試してもらう
-        {
-            ShowText(text_ShootRepeat);
-            textFader.FadeIn();
-
-            // 3回成功するまでループ
-            for (int i = 0; i < 3; i++)
-            {
-                // 間を開ける(同一フレーム内で複数回判定が通るのを防止)
-                yield return new WaitForSecondsRealtime(0.1f);
-
-                yield return new WaitUntil(IsShootSuccess);
-
-                ShowText(text_ShootRepeat + "\n(" + (i + 1).ToString() + "/3)");
-                successAudio.Play();
-            }
 
             textFader.FadeOut();
             yield return new WaitWhile(textFader.IsInFade);
@@ -95,8 +86,24 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
 
     private bool IsShootSuccess()
     {
-        // 弾発射検知はよくわかんないのでお願いします
-        return Input.GetKeyDown(KeyCode.Space);
+#if DEBUG
+        // スペースキーでスキップ
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            return true;
+        }
+#endif
+
+        // 全ての的が壊されたらtrue
+        foreach (var target in targets)
+        {
+            if (!target.isHit)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private void ShowText(string value)

@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     private Rigidbody bulletRb = null;
+    // チャージ音
+    [SerializeField] private AudioSource chargeAudio = null;
+    // 射撃時音
+    [SerializeField] private AudioSource shootAudio = null;
 
     // 弾の速度
     [SerializeField] private float speed = 1.0f;
@@ -34,6 +38,8 @@ public class EnemyBullet : MonoBehaviour
             Vector3 originScale = transform.localScale;
             transform.localScale = Vector3.zero;
 
+            // チャージ音を流す
+            chargeAudio.Play();
             while (elapsedTime <= chargeTime)
             {
                 yield return new WaitForFixedUpdate();
@@ -42,10 +48,18 @@ public class EnemyBullet : MonoBehaviour
 
                 transform.localScale = originScale * elapsedTime / chargeTime;
             }
+            // チャージ音を停止
+            chargeAudio.Stop();
         }
 
         // 前方向に飛ばす
         bulletRb.velocity = transform.forward * speed;
+
+        // 射撃時音を鳴らす
+        shootAudio.Play();
+
+        // 親オブジェクトから切り離し
+        transform.parent = null;
     }
 
     private void OnCollisionEnter(Collision other)

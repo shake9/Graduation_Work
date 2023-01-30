@@ -14,7 +14,7 @@ public class PlayerEnergy : MonoBehaviour
     {
 #if DEBUG
         // デバッグ用のエネルギー補充キー
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Space))
         {
             currentEnergy = maxEnergy;
         }
