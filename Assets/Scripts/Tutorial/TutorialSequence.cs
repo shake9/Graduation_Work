@@ -5,6 +5,8 @@ using UnityEngine;
 public class TutorialSequence : MonoBehaviour
 {
     [SerializeField] private List<GameObject> tutorialPrefabs = new List<GameObject>();
+    [SerializeField] private string nextSceneName;
+
     private Queue<GameObject> tutorialQueue = new Queue<GameObject>();
 
     private GameObject currentTutorialObject;
@@ -40,6 +42,7 @@ public class TutorialSequence : MonoBehaviour
         if (tutorialQueue.Count == 0)
         {
             Debug.Log("チュートリアル終了");
+            FindObjectOfType<FadeManager>().LoadScene(nextSceneName, 0.5f);
             return;
         }
 

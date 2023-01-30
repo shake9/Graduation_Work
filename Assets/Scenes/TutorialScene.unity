@@ -615,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMaxHealth: 10
+  debug_PlayerInvincivle: 0
   isHit: 0
 --- !u!136 &358702062
 CapsuleCollider:
@@ -14378,6 +14379,9 @@ MonoBehaviour:
   tutorialPrefabs:
   - {fileID: 7147463841591369107, guid: 520ff3f39bee6ea439436d3e785fdd1b, type: 3}
   - {fileID: 4243727665837892838, guid: 69c05e5763b401348869a74b14c5913e, type: 3}
+  - {fileID: 6595112981924673966, guid: f73ad3d71aaedce4f9a2aa3bc1eede9c, type: 3}
+  - {fileID: 5859147844966645925, guid: b05a3261ec496314495ac151e56900cc, type: 3}
+  nextSceneName: HandTest
 --- !u!4 &1821352221
 Transform:
   m_ObjectHideFlags: 0
