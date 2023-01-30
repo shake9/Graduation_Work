@@ -4012,6 +4012,10 @@ PrefabInstance:
       value: Fire Ball
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331140, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331140, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}

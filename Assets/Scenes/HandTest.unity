@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMaxHealth: 10
-  debug_PlayerInvincivle: 1
+  debug_PlayerInvincivle: 0
   isHit: 0
 --- !u!136 &358702062
 CapsuleCollider:
