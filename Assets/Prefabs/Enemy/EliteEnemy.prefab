@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: {fileID: 3328269416497370113}
-  distanceZFromPlayer: 5
+  distanceZFromPlayer: 8
   moveTime: 4
 --- !u!114 &3328269416497370113
 MonoBehaviour:
@@ -139,7 +139,7 @@ MonoBehaviour:
   attack: {fileID: 3328269414629360176}
   moveRangeX: 5
   moveRangeY: 0.5
-  distanceZFromPlayer: 5
+  distanceZFromPlayer: 8
   timeBetweenMove: 7.5
 --- !u!135 &3260695570533057173
 SphereCollider:

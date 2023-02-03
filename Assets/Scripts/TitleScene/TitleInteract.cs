@@ -31,7 +31,6 @@ public class TitleInteract : MonoBehaviour
             {
                 selector.gameObject.SetActive(true);
             }
-            //StartCoroutine(ShrinkCoroutine());
         }
     }
 
@@ -73,7 +72,5 @@ public class TitleInteract : MonoBehaviour
             selector.gameObject.SetActive(true);
             selector.StartAnimation();
         }
-
-        gameObject.SetActive(false);
     }
 }
