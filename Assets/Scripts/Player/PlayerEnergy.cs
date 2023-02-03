@@ -12,6 +12,8 @@ public class PlayerEnergy : MonoBehaviour
 
     private void Update()
     {
+        currentEnergy = FindObjectOfType<gestureTest>().energy;
+
 #if DEBUG
         // デバッグ用のエネルギー補充キー
         if (Input.GetKey(KeyCode.Space))
