@@ -148,10 +148,10 @@ MonoBehaviour:
   text: {fileID: 4243727665255672916}
   textFader: {fileID: 4243727665255672914}
   successAudio: {fileID: 4243727665837892839}
-  text_Intro: "\u30C1\u30E3\u30FC\u30B8\u3057\u305F\u30A8\u30CD\u30EB\u30AE\u30FC\u3092\u653B\u6483\u306B\u4F7F\u3063\u3066\u307F\u307E\u3057\u3087\u3046"
-  text_ShootOnce: "\u624B\u306E\u52D5\u304D\u3092\u771F\u4F3C\u3057\u3066\u307F\u3066\u304F\u3060\u3055\u3044"
-  text_ShootRepeat: "3\u56DE\u3084\u3063\u3066\u7DF4\u7FD2\u3057\u3066\u307F\u307E\u3057\u3087\u3046"
-  text_Clear: "\u6B21\u306F\u7269\u3092\u72D9\u3046\u7DF4\u7FD2\u3067\u3059"
+  text_Intro: "\u30C1\u30E3\u30FC\u30B8\u3057\u305F\u30A8\u30CD\u30EB\u30AE\u30FC\u306F\u653B\u6483\u306B\u4F7F\u7528\u3057\u307E\u3059"
+  text_ShootOnce: "\u624B\u3092\u63E1\u3063\u3066\u304B\u3089\u958B\u304F\u3068\u3001\u901A\u5E38\u30B7\u30E7\u30C3\u30C8\u3092\u6483\u3066\u307E\u3059"
+  text_ShootRepeat: "\u7DF4\u7FD2\u3057\u3066\u307F\u307E\u3057\u3087\u3046\u3001\u624B\u306E\u52D5\u304D\u3092\u771F\u4F3C\u3057\u3066\u304F\u3060\u3055\u3044"
+  text_Clear: OK!
   intervalBetweenText: 1
 --- !u!82 &4243727665837892839
 AudioSource:
@@ -163,7 +163,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba6da9b7cd83a5146806de803408c01c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48aa3fce0f50cfb43a4937db4a3edd55, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
