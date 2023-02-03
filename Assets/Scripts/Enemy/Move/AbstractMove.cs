@@ -7,7 +7,7 @@ public abstract class AbstractMove : MonoBehaviour
 {
     protected EnemyController enemyController = null;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         enemyController = GetComponent<EnemyController>();
     }
