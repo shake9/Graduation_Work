@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateAnimator : MonoBehaviour
 {
-    [SerializeField] private Vector3 anglesPerSecond;
+    public Vector3 anglesPerSecond;
 
     private void Update()
     {

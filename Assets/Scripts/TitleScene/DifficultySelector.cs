@@ -8,7 +8,7 @@ public class DifficultySelector : MonoBehaviour
 
     public void StartAnimation()
     {
-        StartCoroutine(EnlargeCoroutine());
+        //StartCoroutine(EnlargeCoroutine());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class DifficultySelector : MonoBehaviour
         if (other.gameObject.CompareTag("hand"))
         {
             WaveManager.difficultySetting = difficultySetting;
-            FindObjectOfType<TitleInteract>().animationNum = 2;
+            FindObjectOfType<TitleInteract>().animator.SetInteger("selecting", 2);
             FindObjectOfType<FadeManager>().LoadScene("HandTest", 1.0f);
         }
     }
