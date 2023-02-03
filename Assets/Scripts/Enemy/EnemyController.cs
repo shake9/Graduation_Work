@@ -52,7 +52,6 @@ public class EnemyController : MonoBehaviour
             health = 0;
         }
 
-        // 必殺技で死んだときの処理は必殺技追加後に実装
         if (other.gameObject.CompareTag("SpecialBullet"))
         {
             ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);

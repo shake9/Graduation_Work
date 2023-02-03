@@ -7,12 +7,6 @@ public class HitAndRunMove : AbstractMove
     // モデルのTransform
     [SerializeField] private Transform modelTr = null;
 
-    // 回転パーツ1
-    [SerializeField] private Transform rotatePart1 = null;
-
-    // 回転パーツ2
-    [SerializeField] private Transform rotatePart2 = null;
-
     // 攻撃用クラス
     [SerializeField] private SimpleShoot attack;
 
@@ -28,17 +22,11 @@ public class HitAndRunMove : AbstractMove
     // 一度移動してから再度移動開始するまでの時間
     [SerializeField] private float timeBetweenMove;
 
-    private float animationMultiplier = 1.0f;
-
     // 移動しているかどうか
     private bool isMoving = false;
 
     private void Start()
     {
-        // 登場演出(アニメーション)への数値渡しに書き換え予定
-        transform.position = CalculateMovePos(enemyController.PlayerTransform.position.z + distanceZFromPlayer);
-
-        // 登場アニメーションが終わったら行動開始するように修正する
         StartCoroutine(MainCoroutine());
     }
 
@@ -49,10 +37,6 @@ public class HitAndRunMove : AbstractMove
 
         // モデルをプレイヤーに向ける(Yを消す前に計算)
         modelTr.forward = Vector3.Normalize(diff);
-
-        // パーツ回転
-        rotatePart1.localEulerAngles += new Vector3(0.0f, 90.0f * Time.deltaTime * animationMultiplier, 0.0f);
-        rotatePart2.localEulerAngles -= new Vector3(0.0f, 90.0f * Time.deltaTime * animationMultiplier, 0.0f);
     }
 
     // 移動場所の算出
@@ -81,14 +65,8 @@ public class HitAndRunMove : AbstractMove
             // 攻撃する
             attack.Attack();
 
-            // アニメーション速度を変える
-            animationMultiplier = 3.0f;
-
             // 次の行動まで待機
             yield return new WaitForSeconds(timeBetweenMove);
-
-            // アニメーション速度を戻す
-            animationMultiplier = 1.0f;
         }
     }
 
