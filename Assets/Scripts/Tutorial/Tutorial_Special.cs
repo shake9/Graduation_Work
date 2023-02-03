@@ -8,6 +8,7 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
     [SerializeField] private Text text;
     [SerializeField] private TextFader textFader;
     [SerializeField] private AudioSource successAudio;
+    [SerializeField] private Animator demoAnimator;
 
     [SerializeField] private string text_Intro;
     [SerializeField] private string text_Special;
@@ -31,6 +32,7 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
     {
         // イントロを表示
         {
+            demoAnimator.SetInteger("animID", 0);
             ShowText(text_Intro);
             textFader.FadeIn();
             yield return new WaitWhile(textFader.IsInFade);
@@ -44,6 +46,8 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
         // 射撃チュートリアル
         {
             // お手本を見せて真似してもらう
+            demoAnimator.SetInteger("animID", 2);
+
             ShowText(text_Special);
             textFader.FadeIn();
             yield return new WaitWhile(textFader.IsInFade);
@@ -58,6 +62,7 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
 
         // クリア
         {
+            demoAnimator.SetInteger("animID", 0);
             ShowText(text_Clear);
             textFader.FadeIn();
             yield return new WaitWhile(textFader.IsInFade);

@@ -58,7 +58,7 @@ public class sceneChange : MonoBehaviour
         {
             //‰¹‚ð–Â‚ç‚·
             audioSource.PlayOneShot(sound);
-           
+            isHitTrigger = false;
             move = true;
         }
         if(move)
@@ -69,7 +69,7 @@ public class sceneChange : MonoBehaviour
         if(move && time >= 300)
         {
             LoadScene();
-            isHitTrigger = false;
+            
             move = false;
         }
 
