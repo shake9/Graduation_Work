@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DifficultySelector : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class DifficultySelector : MonoBehaviour
         if (other.gameObject.CompareTag("hand"))
         {
             WaveManager.difficultySetting = difficultySetting;
-            FindObjectOfType<TitleInteract>().animator.SetInteger("selecting", 2);
-            FindObjectOfType<FadeManager>().LoadScene("HandTest", 1.0f);
+            FindObjectOfType<OVRScreenFade>().FadeIn();
+            SceneManager.LoadScene("HandTest");
         }
     }
 
