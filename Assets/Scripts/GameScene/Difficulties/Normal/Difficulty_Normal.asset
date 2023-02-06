@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fbae1d493000834189ead08e50e2c50, type: 2}
   - {fileID: 11400000, guid: d88328d09780f49488f13a8c9b549897, type: 2}
   healthMultiplier: 2
+  timeBetweenSpawn: 2
