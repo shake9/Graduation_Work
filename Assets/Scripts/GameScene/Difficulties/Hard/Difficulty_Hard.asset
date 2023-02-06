@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf23e489cb23ca24fbf6015ae566a4b9, type: 2}
   - {fileID: 11400000, guid: 42164698f6042d746879695262e5f86d, type: 2}
   - {fileID: 11400000, guid: 4f0f583fd67180646be85f01ed8982a2, type: 2}
+  healthMultiplier: 3

@@ -6,5 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class DifficultySetting : ScriptableObject
 {
+    // ウェーブ数
     public List<WaveSetting> waves;
+
+    // HP倍率
+    public int healthMultiplier = 1;
 }

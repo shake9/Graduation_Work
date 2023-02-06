@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoStart: 1
   intervalBetweenWave: 3
-  waveCount: 3
-  enemySpawnRangeX: 5
-  difficultySetting: {fileID: 11400000, guid: fad421d4663680144b97208f61479f10, type: 2}
+  spawnRangeX: 10
+  spawnRangeY: 3
+  localDifficultySetting: {fileID: 11400000, guid: fad421d4663680144b97208f61479f10, type: 2}
   announceText: {fileID: 0}
+  isClear: 0
