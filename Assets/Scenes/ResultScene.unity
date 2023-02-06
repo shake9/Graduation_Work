@@ -285,6 +285,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
   m_PrefabInstance: {fileID: 97804099}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &116123198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6362399600133891349, guid: cec25bb4f6c33914486049694eb9bc5f, type: 3}
+  m_PrefabInstance: {fileID: 255511133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &116123199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116123198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681da7032fa2abf459a196071be1ab0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anglesPerSecond: {x: 0, y: 180, z: 0}
 --- !u!1 &120377305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,6 +1855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMaxHealth: 10
+  debug_PlayerInvincivle: 0
   isHit: 0
 --- !u!136 &1229940637
 CapsuleCollider:

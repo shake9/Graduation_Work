@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         enemyCount++;
+        health *= WaveManager.difficultySetting.healthMultiplier;
     }
 
     private void Update()
@@ -57,18 +58,23 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            ScoreManager.Instance.AddEnemyKillScore(100, ScoreManager.ScoreType.Normal);
             var damageEffect = Instantiate(damageEffectPrefab, transform.position, transform.rotation);
             damageEffect.transform.localScale *= 3.0f;
             Destroy(damageEffect, 3.0f);
 
             health -= 1;
+
+            if (health == 0)
+            {
+                ScoreManager.Instance.AddEnemyKillScore(100, ScoreManager.ScoreType.Normal);
+            }
         }
 
         if (other.gameObject.CompareTag("SpecialBullet"))
         {
-            ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);
             health = 0;
+            ScoreManager.Instance.AddEnemyKillScore(1000, ScoreManager.ScoreType.Special);
+            Death();
         }
     }
 
