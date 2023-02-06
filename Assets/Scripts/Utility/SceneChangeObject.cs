@@ -18,6 +18,6 @@ public class SceneChangeObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         FindObjectOfType<OVRScreenFade>().FadeIn();
-        SceneManager.LoadScene("HandTest");
+        SceneManager.LoadScene(sceneName);
     }
 }
