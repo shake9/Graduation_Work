@@ -11,7 +11,9 @@ public class ShootTarget : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("SpecialBullet"))
         {
             isHit = true;
-            gameObject.SetActive(false);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
