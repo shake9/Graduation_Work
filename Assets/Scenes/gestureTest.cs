@@ -184,7 +184,7 @@ public class gestureTest : MonoBehaviour
             animator.SetBool("SP_Fire", false);
         }
 
-        if(timer<=60*7)
+        if(timer<=60*15)
         {
             timer++;
         }

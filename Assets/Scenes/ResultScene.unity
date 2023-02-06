@@ -811,6 +811,7 @@ MonoBehaviour:
   sound1: {fileID: 0}
   sound2: {fileID: 8300000, guid: 012ce7edc1fd0f54ea7651e0161e664f, type: 3}
   IsL: 1
+  fire: 0
   Sp: 0
   Isspel: 0
   energy: 0
@@ -3073,6 +3074,10 @@ PrefabInstance:
       value: Fire Ball
       objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331140, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195541944891331140, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: m_TagString
       value: Bullet
       objectReference: {fileID: 0}
@@ -3627,6 +3632,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: d2f4fa03c1b8f0e4ba7282c5eb436006, type: 3}
   sound2: {fileID: 0}
   IsL: 0
+  fire: 0
   Sp: 0
   Isspel: 0
   energy: 0
