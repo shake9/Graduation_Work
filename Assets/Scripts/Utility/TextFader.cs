@@ -68,6 +68,10 @@ public class TextFader : MonoBehaviour
             time += Time.fixedDeltaTime;
         }
 
+        color = text.color;
+        color.a = 1.0f;
+        text.color = color;
+
         isInFade = false;
     }
 
@@ -91,6 +95,10 @@ public class TextFader : MonoBehaviour
 
             time += Time.fixedDeltaTime;
         }
+
+        color = text.color;
+        color.a = 0.0f;
+        text.color = color;
 
         isInFade = false;
     }

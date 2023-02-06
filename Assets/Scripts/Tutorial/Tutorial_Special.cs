@@ -61,6 +61,7 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
 
             textFader.FadeOut();
             yield return new WaitWhile(textFader.IsInFade);
+            yield return new WaitForSeconds(5.0f);
         }
 
         // ÉNÉäÉA
