@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e543d1d9a90aa3148a5415a1bf8d54b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   moveSpeed: 3
+  damageEffectPrefab: {fileID: 7930241684227920497, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+  deathEffectPrefab: {fileID: 7930241684227920497, guid: d01a49c37c8135a4ca80a36556f43cff, type: 3}
 --- !u!114 &4817806081631670587
 MonoBehaviour:
   m_ObjectHideFlags: 0
