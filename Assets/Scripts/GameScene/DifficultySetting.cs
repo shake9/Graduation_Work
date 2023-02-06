@@ -11,4 +11,7 @@ public class DifficultySetting : ScriptableObject
 
     // HPî{ó¶
     public int healthMultiplier = 1;
+
+    // ìGÇÃèoåªä‘äu
+    public float timeBetweenSpawn = 3.0f;
 }

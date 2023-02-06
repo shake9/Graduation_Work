@@ -26,6 +26,10 @@ public class EnemyController : MonoBehaviour
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         enemyCount++;
+    }
+
+    private void Start()
+    {
         health *= WaveManager.difficultySetting.healthMultiplier;
     }
 
