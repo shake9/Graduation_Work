@@ -8,7 +8,6 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
     [SerializeField] private Text text;
     [SerializeField] private TextFader textFader;
     [SerializeField] private AudioSource successAudio;
-    [SerializeField] private Animator demoAnimator;
 
     [SerializeField] private string text_Intro;
     [SerializeField] private string text_Special;
@@ -16,6 +15,8 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
 
     [SerializeField] private float intervalBetweenText = 0.5f;
 
+    private Animator demoAnimator;
+    private gestureTest gestureTest;
     private bool isClear = false;
 
     public bool IsClear()
@@ -25,6 +26,8 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
 
     private void Start()
     {
+        demoAnimator = GameObject.Find("te_born").GetComponent<Animator>();
+        gestureTest = FindObjectOfType<gestureTest>();
         StartCoroutine(TextCoroutine());
     }
 
@@ -78,8 +81,7 @@ public class Tutorial_Special : MonoBehaviour, ITutorial
 
     private bool IsShootSuccess()
     {
-        // •KŽE‹ZŒŸ’m‚Í‚æ‚­‚í‚©‚ñ‚È‚¢‚Ì‚Å‚¨Šè‚¢‚µ‚Ü‚·
-        return Input.GetKeyDown(KeyCode.Space);
+        return Input.GetKeyDown(KeyCode.Space) || gestureTest.Sp;
     }
 
     private void ShowText(string value)

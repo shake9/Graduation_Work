@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 
 public class Tutorial_Energy : MonoBehaviour, ITutorial
 {
     [SerializeField] private TextFader textFader;
 
-    private PlayerEnergy playerEnergy;
+    private gestureTest gestureTest;
     private bool isClear = false;
 
     public bool IsClear()
@@ -16,7 +17,7 @@ public class Tutorial_Energy : MonoBehaviour, ITutorial
 
     private void Start()
     {
-        playerEnergy = FindObjectOfType<PlayerEnergy>();
+        gestureTest = GameObject.Find("L_page").transform.parent.GetComponent<gestureTest>();
         StartCoroutine(ShowText());
     }
 
@@ -28,7 +29,7 @@ public class Tutorial_Energy : MonoBehaviour, ITutorial
         yield return new WaitForSecondsRealtime(1.0f);
 
         // 成功するまで待つ
-        yield return new WaitUntil(playerEnergy.IsEnergyFull);
+        yield return new WaitUntil(IsEnergyFull);
         GetComponent<AudioSource>().Play();
 
         // テキストが消えるまで待つ
@@ -36,5 +37,10 @@ public class Tutorial_Energy : MonoBehaviour, ITutorial
         yield return new WaitWhile(textFader.IsInFade);
 
         isClear = true;
+    }
+
+    private bool IsEnergyFull()
+    {
+        return gestureTest.energy >= 1.0f || Input.GetKeyDown(KeyCode.Space);
     }
 }
