@@ -8,7 +8,6 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
     [SerializeField] private Text text;
     [SerializeField] private TextFader textFader;
     [SerializeField] private AudioSource successAudio;
-    [SerializeField] private Animator demoAnimator;
 
     [SerializeField] private string text_Intro;
     [SerializeField] private string text_ShootOnce;
@@ -17,7 +16,11 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
 
     [SerializeField] private float intervalBetweenText = 0.5f;
 
+    private Animator demoAnimator;
+    private gestureTest gestureTest;
     private bool isClear = false;
+
+    private bool preShootFlag = false;
 
     public bool IsClear()
     {
@@ -26,6 +29,8 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
 
     private void Start()
     {
+        demoAnimator = GameObject.Find("te_born").GetComponent<Animator>();
+        gestureTest = GameObject.Find("Fire Ball").transform.parent.GetComponent<gestureTest>();
         StartCoroutine(TextCoroutine());
     }
 
@@ -100,8 +105,11 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
 
     private bool IsShootSuccess()
     {
-        // ’e”­ŽËŒŸ’m‚Í‚æ‚­‚í‚©‚ñ‚È‚¢‚Ì‚Å‚¨Šè‚¢‚µ‚Ü‚·
-        return Input.GetKeyDown(KeyCode.Space);
+        bool result = !preShootFlag && gestureTest.fire;
+
+        preShootFlag = gestureTest.fire;
+
+        return Input.GetKeyDown(KeyCode.Space) || result;
     }
 
     private void ShowText(string value)
