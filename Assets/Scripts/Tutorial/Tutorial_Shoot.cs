@@ -55,12 +55,11 @@ public class Tutorial_Shoot : MonoBehaviour, ITutorial
             demoAnimator.SetInteger("animID", 1);
 
             ShowText(text_ShootOnce);
+
             textFader.FadeIn();
             yield return new WaitWhile(textFader.IsInFade);
 
-            // 1âÒê¨å˜Ç∑ÇÈÇ‹Ç≈ë“Ç¬
-            yield return new WaitUntil(IsShootSuccess);
-            successAudio.Play();
+            yield return new WaitForSecondsRealtime(intervalBetweenText);
 
             textFader.FadeOut();
             yield return new WaitWhile(textFader.IsInFade);

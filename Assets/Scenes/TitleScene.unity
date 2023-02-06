@@ -1242,6 +1242,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: d2f4fa03c1b8f0e4ba7282c5eb436006, type: 3}
   sound2: {fileID: 0}
   IsL: 0
+  fire: 0
   Sp: 0
   Isspel: 0
   energy: 0
@@ -2097,6 +2098,7 @@ MonoBehaviour:
   sound1: {fileID: 0}
   sound2: {fileID: 8300000, guid: 012ce7edc1fd0f54ea7651e0161e664f, type: 3}
   IsL: 1
+  fire: 0
   Sp: 0
   Isspel: 0
   energy: 0
@@ -4282,30 +4284,6 @@ Transform:
   m_Father: {fileID: 377213689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1958100407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6362399600133891349, guid: cec25bb4f6c33914486049694eb9bc5f, type: 3}
-  m_PrefabInstance: {fileID: 6091858930919111658}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1958100415
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958100407}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d697cfa8683a9d45974dd579241af0f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1980096895
 GameObject:
   m_ObjectHideFlags: 0
