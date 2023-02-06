@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b098bfc18d4ac646a1844ab6f4e84f0, type: 3}
   m_Name: Normal_Wave3
   m_EditorClassIdentifier: 
+  enemyCount: 16
   enemySpawnRates:
   - spawnRate: 50
     enemyPrefab: {fileID: 5356067741305442589, guid: 71120c85b6f60c34cbb70f960e344475, type: 3}
