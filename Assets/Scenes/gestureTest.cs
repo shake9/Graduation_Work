@@ -9,7 +9,7 @@ public class gestureTest : MonoBehaviour
     public AudioClip sound1;
     public AudioClip sound2;
     public bool IsL;
-    private bool fire = false;
+    public bool fire = false;
     private bool charge = false;
     private bool Lsound = false;
     private bool Rsound = false;
