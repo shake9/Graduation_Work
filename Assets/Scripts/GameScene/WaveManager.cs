@@ -40,6 +40,8 @@ public class WaveManager : MonoBehaviour
 
         if (difficultySetting != null)
             localDifficultySetting = difficultySetting;
+        else
+            difficultySetting = localDifficultySetting;
 
         if (autoStart)
             StartWave(0.0f);
@@ -137,7 +139,7 @@ public class WaveManager : MonoBehaviour
     private SimpleWave GenerateWave(int waveNum)
     {
         var wave = localDifficultySetting.waves[waveNum];
-        return new SimpleWave(waveNum + 1, wave.enemyCount, 3.0f, wave);
+        return new SimpleWave(waveNum + 1, wave.enemyCount, localDifficultySetting.timeBetweenSpawn, wave);
     }
 
     private Vector3 GetRandomPosition()
