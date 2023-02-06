@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   moveSpeed: 1
+  deathEffectPrefab: {fileID: 7930241684227920497, guid: 5ac88c742f64599438191fb99013c325, type: 3}
 --- !u!114 &7899917958488809033
 MonoBehaviour:
   m_ObjectHideFlags: 0
