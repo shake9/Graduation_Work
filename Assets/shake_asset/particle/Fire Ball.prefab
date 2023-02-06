@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3527525707388623326}
   - component: {fileID: 2267012600194055871}
   - component: {fileID: 8486204073382479539}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 3727727267212306754}
   - component: {fileID: 1081671050853795177}
   - component: {fileID: 3047184494677740941}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9706,7 +9706,7 @@ GameObject:
   - component: {fileID: 9195541944891331139}
   - component: {fileID: 9195541944891331137}
   - component: {fileID: 9195541944891331138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire Ball
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -13625,7 +13625,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.1
+    radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
