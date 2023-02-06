@@ -8,7 +8,7 @@ public class ShootTarget : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("SpecialBullet"))
         {
             isHit = true;
             gameObject.SetActive(false);

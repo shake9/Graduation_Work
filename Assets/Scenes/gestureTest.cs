@@ -110,7 +110,7 @@ public class gestureTest : MonoBehaviour
 
         }
 
-        if (isIndexStraight && isMiddleStraight && !isRingStraight && !isPinkyStraight && isThumbStraight && !IsL)
+        if (isIndexStraight && isMiddleStraight && !isRingStraight && !isPinkyStraight && !IsL)
         {
             Isspel = true;
             animator.SetBool("spel", true);

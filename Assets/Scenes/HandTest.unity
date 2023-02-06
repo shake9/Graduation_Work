@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMaxHealth: 10
+  debug_PlayerInvincivle: 0
   isHit: 0
 --- !u!136 &358702062
 CapsuleCollider:
@@ -13678,7 +13679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469148763
 Transform:
   m_ObjectHideFlags: 0
@@ -35433,42 +35434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1191662068}
     m_Modifications:
-    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: RotationModule.x.scalar
-      value: 34.906586
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: RotationModule.y.scalar
-      value: 34.906586
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: RotationModule.curve.scalar
-      value: 34.906586
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: RotationModule.separateAxes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331137, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[3].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331138, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 9195541944891331138, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: m_RenderMode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331138, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: m_RenderAlignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195541944891331138, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
-      propertyPath: m_ApplyActiveColorSpace
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9195541944891331139, guid: 1c39ffa7754e8864f99d031c605b7fd9, type: 3}
       propertyPath: m_RootOrder
       value: 4
