@@ -8,7 +8,7 @@ public class gestureTest : MonoBehaviour
     AudioSource audioSource;
     public AudioClip sound1;
     public AudioClip sound2;
-    public bool IsL;
+    public bool IsLHand;
     public bool fire = false;
     private bool charge = false;
     private bool Lsound = false;
@@ -78,8 +78,8 @@ public class gestureTest : MonoBehaviour
         // 小指
         var isPinkyStraight = IsStraight(0.8f, OVRSkeleton.BoneId.Hand_Pinky0, OVRSkeleton.BoneId.Hand_Pinky1, OVRSkeleton.BoneId.Hand_Pinky2, OVRSkeleton.BoneId.Hand_Pinky3, OVRSkeleton.BoneId.Hand_PinkyTip);
 
-        // 親指だけが立っている
-        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && isThumbStraight && !IsL)
+        // 手がパーになっている
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && isThumbStraight && !IsLHand)
         {
             if(L_ene.energy >= 0.2f)
             {
@@ -103,8 +103,8 @@ public class gestureTest : MonoBehaviour
             //animator.SetBool("Fire", true);
             //audioSource.PlayOneShot(sound1);
         }
-        // 親指と人差し指が立っている
-        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && !isThumbStraight && !IsL)
+        // 手がグーになっている
+        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && !isThumbStraight && !IsLHand)
         {
             Debug.Log("reload");
             fire = false;
@@ -114,7 +114,8 @@ public class gestureTest : MonoBehaviour
 
         }
 
-        if (isIndexStraight && isMiddleStraight && !isRingStraight && !isPinkyStraight && !IsL)
+        //人差し指と薬指が立っている
+        if (isIndexStraight && isMiddleStraight && !isRingStraight && !isPinkyStraight && !IsLHand)
         {
             Isspel = true;
             animator.SetBool("spel", true);
@@ -126,7 +127,7 @@ public class gestureTest : MonoBehaviour
         }
 
         // 親指関係なくそれ以外の指が全て立っている
-        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && IsL)
+        if (isIndexStraight && isMiddleStraight && isRingStraight && isPinkyStraight && IsLHand)
         {
             Debug.Log("charge");
             charge = true;
@@ -141,7 +142,7 @@ public class gestureTest : MonoBehaviour
 
             //animator.SetBool("Charge", true);
         }
-        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && IsL)
+        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && IsLHand)
         {
             Debug.Log("charge");
             charge = false;
