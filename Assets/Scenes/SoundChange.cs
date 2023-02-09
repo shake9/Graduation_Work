@@ -63,11 +63,11 @@ public class SoundChange : MonoBehaviour
             Tutorial_BGM.Play();
         }
 
-        //チュートリアルからゲームシーンへ
-        if(beforeScene == "TutorialScene" && nextScene.name == "HandTest")
+        //チュートリアルからタイトルシーンへ
+        if(beforeScene == "TutorialScene" && nextScene.name == "TitleScene")
         {
             Tutorial_BGM.Stop();
-            Game_BGM.Play();
+            Title_BGM.Play();
         }
 
         // ゲームシーンからリザルトへ
