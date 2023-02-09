@@ -14564,7 +14564,7 @@ MonoBehaviour:
   - {fileID: 4243727665837892838, guid: 69c05e5763b401348869a74b14c5913e, type: 3}
   - {fileID: 6595112981924673966, guid: f73ad3d71aaedce4f9a2aa3bc1eede9c, type: 3}
   - {fileID: 5859147844966645925, guid: b05a3261ec496314495ac151e56900cc, type: 3}
-  nextSceneName: HandTest
+  nextSceneName: TitleScene
 --- !u!4 &1821352221
 Transform:
   m_ObjectHideFlags: 0

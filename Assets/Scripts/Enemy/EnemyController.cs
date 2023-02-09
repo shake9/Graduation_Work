@@ -9,8 +9,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
     public float MoveSpeed { get { return moveSpeed; } private set { moveSpeed = value; } }
 
-    // ダメージ時エフェクトのPrefab
-    [SerializeField] private GameObject damageEffectPrefab;
+    // ダメージ時エフェクト
+    [SerializeField] private AudioSource damageAudio;
 
     // 死亡時エフェクトのPrefab
     [SerializeField] private GameObject deathEffectPrefab;
@@ -62,10 +62,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            var damageEffect = Instantiate(damageEffectPrefab, transform.position, transform.rotation);
-            damageEffect.transform.localScale *= 3.0f;
-            Destroy(damageEffect, 3.0f);
-
+            damageAudio.Play();
             health -= 1;
 
             if (health == 0)

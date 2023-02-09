@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   moveSpeed: 3
-  damageEffectPrefab: {fileID: 7930241684227920497, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+  damageAudio: {fileID: 6188927821360391868}
   deathEffectPrefab: {fileID: 7930241684227920497, guid: d01a49c37c8135a4ca80a36556f43cff, type: 3}
 --- !u!114 &4817806081631670587
 MonoBehaviour:
@@ -233,6 +233,7 @@ Transform:
   m_Children:
   - {fileID: 3328269414629360177}
   - {fileID: 2805043967566534637}
+  - {fileID: 4315478340694563723}
   m_Father: {fileID: 3328269416497370114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -327,6 +328,73 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82f7ad0533e2be44182f64bd5b31b26b, type: 3}
   m_PrefabInstance: {fileID: 3207119934628119639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6777538230492522184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1852769506943836974}
+    m_Modifications:
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930241684227920497, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+      propertyPath: m_Name
+      value: EnemyDamageEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+--- !u!4 &4315478340694563723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7344543829403319619, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+  m_PrefabInstance: {fileID: 6777538230492522184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6188927821360391868 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 859582852001759348, guid: a64c890161606d740a13ff50cd94ab8d, type: 3}
+  m_PrefabInstance: {fileID: 6777538230492522184}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7601983966973626159
 PrefabInstance:
