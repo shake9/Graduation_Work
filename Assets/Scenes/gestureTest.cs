@@ -103,8 +103,8 @@ public class gestureTest : MonoBehaviour
             //animator.SetBool("Fire", true);
             //audioSource.PlayOneShot(sound1);
         }
-        // 手がグーになっている
-        else if (!isIndexStraight && !isMiddleStraight && !isRingStraight && !isPinkyStraight && !isThumbStraight && !IsLHand)
+        // 右手の親指が曲がればリロード
+        else if (!isIndexStraight && !IsLHand)
         {
             Debug.Log("reload");
             fire = false;
