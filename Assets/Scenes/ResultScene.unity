@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
-  sound2: {fileID: 8300000, guid: 012ce7edc1fd0f54ea7651e0161e664f, type: 3}
+  sound2: {fileID: 0}
   IsL: 1
   fire: 0
   Sp: 0
@@ -3629,7 +3629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41faa4b9816b584499372290b72a2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound1: {fileID: 8300000, guid: d2f4fa03c1b8f0e4ba7282c5eb436006, type: 3}
+  sound1: {fileID: 0}
   sound2: {fileID: 0}
   IsL: 0
   fire: 0
