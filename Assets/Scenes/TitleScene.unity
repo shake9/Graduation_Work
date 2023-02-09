@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
   sound2: {fileID: 0}
-  IsL: 0
+  IsLHand: 0
   fire: 0
   Sp: 0
   Isspel: 0
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
   sound2: {fileID: 0}
-  IsL: 1
+  IsLHand: 1
   fire: 0
   Sp: 0
   Isspel: 0

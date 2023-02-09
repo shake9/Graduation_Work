@@ -12806,7 +12806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: d2f4fa03c1b8f0e4ba7282c5eb436006, type: 3}
   sound2: {fileID: 0}
-  IsL: 0
+  IsLHand: 0
   fire: 0
   Sp: 0
   Isspel: 0
@@ -23136,7 +23136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
   sound2: {fileID: 8300000, guid: 012ce7edc1fd0f54ea7651e0161e664f, type: 3}
-  IsL: 1
+  IsLHand: 1
   fire: 0
   Sp: 0
   Isspel: 0
