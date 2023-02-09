@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: bcde03edb2399484999c60b1f46c5dda, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3d1da2b78b827134d985152e0c0ece08, type: 2}
+      objectReference: {fileID: 2100000, guid: d63daeed8919ce14fbbb2dc8c5d43868, type: 2}
     - target: {fileID: 919132149155446097, guid: bcde03edb2399484999c60b1f46c5dda, type: 3}
       propertyPath: m_Name
       value: wind
@@ -440,7 +440,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 82f7ad0533e2be44182f64bd5b31b26b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a0ce3530e8e68d64cb37f0cd29afff73, type: 2}
+      objectReference: {fileID: 2100000, guid: f7b3aa1390142cc4c8d4dab7c172e604, type: 2}
     - target: {fileID: 919132149155446097, guid: 82f7ad0533e2be44182f64bd5b31b26b, type: 3}
       propertyPath: m_Name
       value: effect2
